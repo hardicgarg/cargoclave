@@ -138,8 +138,8 @@ const CustomerPortalMyTrips = () => {
 
   const filteredTrips = useMemo(() => {
     return mockTrips?.filter((trip) => {
-      if (searchTerm && !trip?.id?.toLowerCase()?.includes(searchTerm?.toLowerCase()) && 
-          !trip?.serviceProvider?.toLowerCase()?.includes(searchTerm?.toLowerCase())) {
+      if (searchTerm && !trip?.id?.toLowerCase()?.includes(searchTerm?.toLowerCase()) &&
+        !trip?.serviceProvider?.toLowerCase()?.includes(searchTerm?.toLowerCase())) {
         return false;
       }
       if (statusFilter?.length > 0 && !statusFilter?.includes(trip?.status)) {
@@ -206,7 +206,7 @@ const CustomerPortalMyTrips = () => {
   return (
     <div className="flex h-screen bg-background">
       <MainSidebar onToggleCollapse={setIsSidebarCollapsed} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <div className="flex-1 flex flex-col overflow-hidden ml-[15rem]">
         <BreadcrumbNavigation />
 
         <div className="flex-1 flex overflow-hidden">

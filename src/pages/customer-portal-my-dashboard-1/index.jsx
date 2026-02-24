@@ -119,7 +119,7 @@ const CustomerPortalMyDashboard1 = () => {
   return (
     <div className="flex h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <MainSidebar onToggleCollapse={setIsSidebarCollapsed} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <div className="flex-1 flex flex-col overflow-hidden ml-[15rem]">
         <BreadcrumbNavigation />
 
         <div className="flex-1 overflow-y-auto">
@@ -164,9 +164,8 @@ const CustomerPortalMyDashboard1 = () => {
               ]?.map((metric, index) => (
                 <div
                   key={index}
-                  className={`bg-white rounded-xl shadow-lg p-6 border-l-4 border-${metric?.color}-500 transform transition-all duration-700 hover:scale-105 hover:shadow-2xl ${
-                    animationStage >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
+                  className={`bg-white rounded-xl shadow-lg p-6 border-l-4 border-${metric?.color}-500 transform transition-all duration-700 hover:scale-105 hover:shadow-2xl ${animationStage >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
                   style={{ transitionDelay: `${metric?.delay}ms` }}
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -186,9 +185,8 @@ const CustomerPortalMyDashboard1 = () => {
             </div>
 
             {/* Recent Trips with hover effects */}
-            <div className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-700 ${
-              animationStage >= 3 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-            }`}>
+            <div className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-700 ${animationStage >= 3 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}>
               <div className="px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white">
                 <div className="flex items-center justify-between">
                   <div>
@@ -280,9 +278,8 @@ const CustomerPortalMyDashboard1 = () => {
             </div>
 
             {/* Service Provider Cards */}
-            <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-700 ${
-              animationStage >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
+            <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-700 ${animationStage >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
               {serviceProviders?.map((provider, index) => (
                 <div
                   key={index}
@@ -322,9 +319,8 @@ const CustomerPortalMyDashboard1 = () => {
             </div>
 
             {/* Quick Actions */}
-            <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-700 ${
-              animationStage >= 3 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}>
+            <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-700 ${animationStage >= 3 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              }`}>
               {[
                 { icon: 'FileText', title: 'View Contracts', desc: 'Manage your agreements', path: '/customer-portal-my-contracts', color: 'blue' },
                 { icon: 'MapPin', title: 'Track Shipments', desc: 'Real-time tracking', path: '/customer-portal-my-trips', color: 'purple' },

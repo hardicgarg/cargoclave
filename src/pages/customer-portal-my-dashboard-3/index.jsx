@@ -74,14 +74,13 @@ const CustomerPortalMyDashboard3 = () => {
   return (
     <div className="flex h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
       <MainSidebar onToggleCollapse={setIsSidebarCollapsed} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <div className="flex-1 flex flex-col overflow-hidden ml-[15rem]">
         <BreadcrumbNavigation />
 
         <div className="flex-1 overflow-y-auto">
           {/* Animated Header */}
-          <div className={`relative overflow-hidden transition-all duration-1000 ${
-            animatedCards?.includes(0) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
-          }`}>
+          <div className={`relative overflow-hidden transition-all duration-1000 ${animatedCards?.includes(0) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
+            }`}>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 opacity-90" />
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20" />
             <div className="relative px-6 py-8 text-white">
@@ -111,9 +110,8 @@ const CustomerPortalMyDashboard3 = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Left Panel - Metrics with bounce animation */}
               <div className="space-y-6">
-                <div className={`bg-white rounded-2xl shadow-2xl p-6 border-t-4 border-purple-500 transition-all duration-700 ${
-                  animatedCards?.includes(1) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-                }`}>
+                <div className={`bg-white rounded-2xl shadow-2xl p-6 border-t-4 border-purple-500 transition-all duration-700 ${animatedCards?.includes(1) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                  }`}>
                   <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
                     <Icon name="TrendingUp" size="1.5rem" className="text-purple-600" />
                     Key Performance Metrics
@@ -140,9 +138,8 @@ const CustomerPortalMyDashboard3 = () => {
                 </div>
 
                 {/* Chart Visualization */}
-                <div className={`bg-white rounded-2xl shadow-2xl p-6 transition-all duration-700 ${
-                  animatedCards?.includes(2) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-                }`}>
+                <div className={`bg-white rounded-2xl shadow-2xl p-6 transition-all duration-700 ${animatedCards?.includes(2) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                  }`}>
                   <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <Icon name="BarChart3" size="1.25rem" className="text-blue-600" />
                     Delivery Performance Trend
@@ -164,9 +161,8 @@ const CustomerPortalMyDashboard3 = () => {
                 </div>
 
                 {/* Provider Performance */}
-                <div className={`bg-white rounded-2xl shadow-2xl p-6 transition-all duration-700 ${
-                  animatedCards?.includes(3) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-                }`}>
+                <div className={`bg-white rounded-2xl shadow-2xl p-6 transition-all duration-700 ${animatedCards?.includes(3) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                  }`}>
                   <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <Icon name="Award" size="1.25rem" className="text-yellow-600" />
                     Top Service Providers
@@ -211,9 +207,8 @@ const CustomerPortalMyDashboard3 = () => {
 
               {/* Right Panel - Trips with interactive effects */}
               <div className="space-y-6">
-                <div className={`bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-700 ${
-                  animatedCards?.includes(4) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-                }`}>
+                <div className={`bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-700 ${animatedCards?.includes(4) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                  }`}>
                   <div className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-4 text-white">
                     <div className="flex items-center justify-between">
                       <div>
@@ -237,9 +232,8 @@ const CustomerPortalMyDashboard3 = () => {
                     {trips?.map((trip, index) => (
                       <div
                         key={trip?.id}
-                        className={`p-6 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-500 ${
-                          animatedCards?.includes(5 + index) ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                        }`}
+                        className={`p-6 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-500 ${animatedCards?.includes(5 + index) ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                          }`}
                         style={{ transitionDelay: `${index * 150}ms` }}
                       >
                         <div className="space-y-4">
@@ -253,9 +247,8 @@ const CustomerPortalMyDashboard3 = () => {
                                 <p className="text-sm text-muted-foreground">{trip?.provider}</p>
                               </div>
                             </div>
-                            <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                              trip?.status === 'in-transit' ? 'bg-blue-100 text-blue-800' : 'bg-red-100 text-red-800'
-                            }`}>
+                            <span className={`px-3 py-1 rounded-full text-xs font-bold ${trip?.status === 'in-transit' ? 'bg-blue-100 text-blue-800' : 'bg-red-100 text-red-800'
+                              }`}>
                               {trip?.status?.toUpperCase()}
                             </span>
                           </div>
@@ -295,9 +288,8 @@ const CustomerPortalMyDashboard3 = () => {
                 </div>
 
                 {/* Quick Actions with gradient */}
-                <div className={`grid grid-cols-1 gap-4 transition-all duration-700 ${
-                  animatedCards?.includes(8) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-                }`}>
+                <div className={`grid grid-cols-1 gap-4 transition-all duration-700 ${animatedCards?.includes(8) ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                  }`}>
                   {[
                     { icon: 'FileText', title: 'Contracts', path: '/customer-portal-my-contracts', gradient: 'from-purple-500 to-pink-500' },
                     { icon: 'MessageCircle', title: 'Support', path: '#', gradient: 'from-blue-500 to-purple-500' }

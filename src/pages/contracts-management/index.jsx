@@ -391,8 +391,8 @@ const ContractsManagement = () => {
 
   return (
     <div className="flex h-screen bg-background">
-      <MainSidebar onToggleCollapse={setIsSidebarCollapsed} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <MainSidebar isCollapsed={isSidebarCollapsed} onToggleCollapse={() => setIsSidebarCollapsed(prev => !prev)} />
+      <div className={`flex-1 flex flex-col overflow-hidden transition-all duration-300 ${isSidebarCollapsed ? 'ml-[3.75rem]' : 'ml-[15rem]'}`}>
         <BreadcrumbNavigation />
 
         <div className="flex-1 flex overflow-hidden">

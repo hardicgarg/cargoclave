@@ -178,9 +178,8 @@ const CustomerPortalMyContracts = () => {
 
     return (
       <span
-        className={`px-2 py-1 rounded-full text-xs font-medium border ${
-          statusColors?.[status] || 'bg-gray-100 text-gray-800 border-gray-200'
-        }`}
+        className={`px-2 py-1 rounded-full text-xs font-medium border ${statusColors?.[status] || 'bg-gray-100 text-gray-800 border-gray-200'
+          }`}
       >
         {status?.replace('-', ' ')?.toUpperCase()}
       </span>
@@ -204,7 +203,7 @@ const CustomerPortalMyContracts = () => {
   return (
     <div className="flex h-screen bg-background">
       <MainSidebar onToggleCollapse={setIsSidebarCollapsed} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <div className="flex-1 flex flex-col overflow-hidden ml-[15rem]">
         <BreadcrumbNavigation />
 
         <div className="flex-1 flex flex-col overflow-hidden">
@@ -247,17 +246,15 @@ const CustomerPortalMyContracts = () => {
               <div className="flex items-center gap-2 bg-muted rounded-lg p-1">
                 <button
                   onClick={() => setViewMode('table')}
-                  className={`px-3 py-1.5 rounded transition-all duration-150 ${
-                    viewMode === 'table' ?'bg-card text-foreground shadow-sm' :'text-muted-foreground hover:text-foreground'
-                  }`}
+                  className={`px-3 py-1.5 rounded transition-all duration-150 ${viewMode === 'table' ? 'bg-card text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                    }`}
                 >
                   <Icon name="Table" size="1.125rem" />
                 </button>
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`px-3 py-1.5 rounded transition-all duration-150 ${
-                    viewMode === 'grid' ?'bg-card text-foreground shadow-sm' :'text-muted-foreground hover:text-foreground'
-                  }`}
+                  className={`px-3 py-1.5 rounded transition-all duration-150 ${viewMode === 'grid' ? 'bg-card text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                    }`}
                 >
                   <Icon name="LayoutGrid" size="1.125rem" />
                 </button>

@@ -24,150 +24,150 @@ const TripsMonitoringManagement = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   const mockTrips = [
-  {
-    id: 'TRP-2025-1127',
-    contractId: 'CNT-2025-0456',
-    customer: 'Acme Corporation',
-    commodity: 'Electronics',
-    driver: 'John Smith',
-    driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1fdbf1da3-1763299816234.png",
-    driverAvatarAlt: 'Professional headshot of Caucasian male driver with short brown hair wearing navy blue uniform',
-    vehicle: 'TRK-001',
-    origin: 'New York, NY',
-    destination: 'Miami, FL',
-    status: 'in-transit',
-    progress: 65,
-    currentCheckpoint: 3,
-    totalCheckpoints: 5,
-    eta: '11/28/2025 2:30 PM',
-    delayMinutes: 0
-  },
-  {
-    id: 'TRP-2025-1128',
-    contractId: 'CNT-2025-0457',
-    customer: 'Global Logistics Inc.',
-    commodity: 'Automotive Parts',
-    driver: 'Maria Garcia',
-    driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1633a6836-1763301455488.png",
-    driverAvatarAlt: 'Professional headshot of Hispanic female driver with long dark hair wearing company uniform',
-    vehicle: 'TRK-003',
-    origin: 'Los Angeles, CA',
-    destination: 'Phoenix, AZ',
-    status: 'delayed',
-    progress: 45,
-    currentCheckpoint: 2,
-    totalCheckpoints: 4,
-    eta: '11/27/2025 4:15 PM',
-    delayMinutes: 35
-  },
-  {
-    id: 'TRP-2025-1129',
-    contractId: 'CNT-2025-0458',
-    customer: 'Swift Transport Co.',
-    commodity: 'Pharmaceuticals',
-    driver: 'David Chen',
-    driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1a8b4d412-1763296666105.png",
-    driverAvatarAlt: 'Professional headshot of Asian male driver with short black hair and glasses wearing blue shirt',
-    vehicle: 'TRK-005',
-    origin: 'Chicago, IL',
-    destination: 'Houston, TX',
-    status: 'in-transit',
-    progress: 80,
-    currentCheckpoint: 4,
-    totalCheckpoints: 5,
-    eta: '11/27/2025 6:45 PM',
-    delayMinutes: 0
-  },
-  {
-    id: 'TRP-2025-1130',
-    contractId: 'CNT-2025-0459',
-    customer: 'Prime Shipping Ltd.',
-    commodity: 'Consumer Goods',
-    driver: 'Sarah Johnson',
-    driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1fe899efa-1763299749488.png",
-    driverAvatarAlt: 'Professional headshot of African American female driver with curly hair wearing red company jacket',
-    vehicle: 'TRK-002',
-    origin: 'Seattle, WA',
-    destination: 'Portland, OR',
-    status: 'at-checkpoint',
-    progress: 50,
-    currentCheckpoint: 2,
-    totalCheckpoints: 3,
-    eta: '11/27/2025 8:00 PM',
-    delayMinutes: 0
-  },
-  {
-    id: 'TRP-2025-1131',
-    contractId: 'CNT-2025-0460',
-    customer: 'Express Cargo Services',
-    commodity: 'Food & Beverages',
-    driver: 'Michael Brown',
-    driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1b82ab60e-1763296079393.png",
-    driverAvatarAlt: 'Professional headshot of Caucasian male driver with beard wearing gray uniform shirt',
-    vehicle: 'TRK-004',
-    origin: 'Boston, MA',
-    destination: 'Philadelphia, PA',
-    status: 'scheduled',
-    progress: 0,
-    currentCheckpoint: 0,
-    totalCheckpoints: 3,
-    eta: '11/28/2025 10:00 AM',
-    delayMinutes: 0
-  },
-  {
-    id: 'TRP-2025-1132',
-    contractId: 'CNT-2025-0461',
-    customer: 'Acme Corporation',
-    commodity: 'Industrial Equipment',
-    driver: 'John Smith',
-    driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1fdbf1da3-1763299816234.png",
-    driverAvatarAlt: 'Professional headshot of Caucasian male driver with short brown hair wearing navy blue uniform',
-    vehicle: 'TRK-001',
-    origin: 'Dallas, TX',
-    destination: 'Denver, CO',
-    status: 'completed',
-    progress: 100,
-    currentCheckpoint: 6,
-    totalCheckpoints: 6,
-    eta: '11/27/2025 12:00 PM',
-    delayMinutes: 0
-  },
-  {
-    id: 'TRP-2025-1133',
-    contractId: 'CNT-2025-0462',
-    customer: 'Global Logistics Inc.',
-    commodity: 'Textiles',
-    driver: 'Maria Garcia',
-    driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1633a6836-1763301455488.png",
-    driverAvatarAlt: 'Professional headshot of Hispanic female driver with long dark hair wearing company uniform',
-    vehicle: 'TRK-003',
-    origin: 'Atlanta, GA',
-    destination: 'Charlotte, NC',
-    status: 'in-transit',
-    progress: 70,
-    currentCheckpoint: 3,
-    totalCheckpoints: 4,
-    eta: '11/27/2025 5:30 PM',
-    delayMinutes: 0
-  },
-  {
-    id: 'TRP-2025-1134',
-    contractId: 'CNT-2025-0463',
-    customer: 'Swift Transport Co.',
-    commodity: 'Electronics',
-    driver: 'David Chen',
-    driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1a8b4d412-1763296666105.png",
-    driverAvatarAlt: 'Professional headshot of Asian male driver with short black hair and glasses wearing blue shirt',
-    vehicle: 'TRK-005',
-    origin: 'San Francisco, CA',
-    destination: 'Las Vegas, NV',
-    status: 'delayed',
-    progress: 55,
-    currentCheckpoint: 2,
-    totalCheckpoints: 4,
-    eta: '11/27/2025 9:00 PM',
-    delayMinutes: 45
-  }];
+    {
+      id: 'TRP-2025-1127',
+      contractId: 'CNT-2025-0456',
+      customer: 'Acme Corporation',
+      commodity: 'Electronics',
+      driver: 'John Smith',
+      driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1fdbf1da3-1763299816234.png",
+      driverAvatarAlt: 'Professional headshot of Caucasian male driver with short brown hair wearing navy blue uniform',
+      vehicle: 'TRK-001',
+      origin: 'New York, NY',
+      destination: 'Miami, FL',
+      status: 'in-transit',
+      progress: 65,
+      currentCheckpoint: 3,
+      totalCheckpoints: 5,
+      eta: '11/28/2025 2:30 PM',
+      delayMinutes: 0
+    },
+    {
+      id: 'TRP-2025-1128',
+      contractId: 'CNT-2025-0457',
+      customer: 'Global Logistics Inc.',
+      commodity: 'Automotive Parts',
+      driver: 'Maria Garcia',
+      driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1633a6836-1763301455488.png",
+      driverAvatarAlt: 'Professional headshot of Hispanic female driver with long dark hair wearing company uniform',
+      vehicle: 'TRK-003',
+      origin: 'Los Angeles, CA',
+      destination: 'Phoenix, AZ',
+      status: 'delayed',
+      progress: 45,
+      currentCheckpoint: 2,
+      totalCheckpoints: 4,
+      eta: '11/27/2025 4:15 PM',
+      delayMinutes: 35
+    },
+    {
+      id: 'TRP-2025-1129',
+      contractId: 'CNT-2025-0458',
+      customer: 'Swift Transport Co.',
+      commodity: 'Pharmaceuticals',
+      driver: 'David Chen',
+      driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1a8b4d412-1763296666105.png",
+      driverAvatarAlt: 'Professional headshot of Asian male driver with short black hair and glasses wearing blue shirt',
+      vehicle: 'TRK-005',
+      origin: 'Chicago, IL',
+      destination: 'Houston, TX',
+      status: 'in-transit',
+      progress: 80,
+      currentCheckpoint: 4,
+      totalCheckpoints: 5,
+      eta: '11/27/2025 6:45 PM',
+      delayMinutes: 0
+    },
+    {
+      id: 'TRP-2025-1130',
+      contractId: 'CNT-2025-0459',
+      customer: 'Prime Shipping Ltd.',
+      commodity: 'Consumer Goods',
+      driver: 'Sarah Johnson',
+      driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1fe899efa-1763299749488.png",
+      driverAvatarAlt: 'Professional headshot of African American female driver with curly hair wearing red company jacket',
+      vehicle: 'TRK-002',
+      origin: 'Seattle, WA',
+      destination: 'Portland, OR',
+      status: 'at-checkpoint',
+      progress: 50,
+      currentCheckpoint: 2,
+      totalCheckpoints: 3,
+      eta: '11/27/2025 8:00 PM',
+      delayMinutes: 0
+    },
+    {
+      id: 'TRP-2025-1131',
+      contractId: 'CNT-2025-0460',
+      customer: 'Express Cargo Services',
+      commodity: 'Food & Beverages',
+      driver: 'Michael Brown',
+      driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1b82ab60e-1763296079393.png",
+      driverAvatarAlt: 'Professional headshot of Caucasian male driver with beard wearing gray uniform shirt',
+      vehicle: 'TRK-004',
+      origin: 'Boston, MA',
+      destination: 'Philadelphia, PA',
+      status: 'scheduled',
+      progress: 0,
+      currentCheckpoint: 0,
+      totalCheckpoints: 3,
+      eta: '11/28/2025 10:00 AM',
+      delayMinutes: 0
+    },
+    {
+      id: 'TRP-2025-1132',
+      contractId: 'CNT-2025-0461',
+      customer: 'Acme Corporation',
+      commodity: 'Industrial Equipment',
+      driver: 'John Smith',
+      driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1fdbf1da3-1763299816234.png",
+      driverAvatarAlt: 'Professional headshot of Caucasian male driver with short brown hair wearing navy blue uniform',
+      vehicle: 'TRK-001',
+      origin: 'Dallas, TX',
+      destination: 'Denver, CO',
+      status: 'completed',
+      progress: 100,
+      currentCheckpoint: 6,
+      totalCheckpoints: 6,
+      eta: '11/27/2025 12:00 PM',
+      delayMinutes: 0
+    },
+    {
+      id: 'TRP-2025-1133',
+      contractId: 'CNT-2025-0462',
+      customer: 'Global Logistics Inc.',
+      commodity: 'Textiles',
+      driver: 'Maria Garcia',
+      driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1633a6836-1763301455488.png",
+      driverAvatarAlt: 'Professional headshot of Hispanic female driver with long dark hair wearing company uniform',
+      vehicle: 'TRK-003',
+      origin: 'Atlanta, GA',
+      destination: 'Charlotte, NC',
+      status: 'in-transit',
+      progress: 70,
+      currentCheckpoint: 3,
+      totalCheckpoints: 4,
+      eta: '11/27/2025 5:30 PM',
+      delayMinutes: 0
+    },
+    {
+      id: 'TRP-2025-1134',
+      contractId: 'CNT-2025-0463',
+      customer: 'Swift Transport Co.',
+      commodity: 'Electronics',
+      driver: 'David Chen',
+      driverAvatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1a8b4d412-1763296666105.png",
+      driverAvatarAlt: 'Professional headshot of Asian male driver with short black hair and glasses wearing blue shirt',
+      vehicle: 'TRK-005',
+      origin: 'San Francisco, CA',
+      destination: 'Las Vegas, NV',
+      status: 'delayed',
+      progress: 55,
+      currentCheckpoint: 2,
+      totalCheckpoints: 4,
+      eta: '11/27/2025 9:00 PM',
+      delayMinutes: 45
+    }];
 
 
   const filteredTrips = useMemo(() => {
@@ -227,7 +227,7 @@ const TripsMonitoringManagement = () => {
 
   const handleSelectTrip = (tripId, checked) => {
     setSelectedTrips((prev) =>
-    checked ? [...prev, tripId] : prev?.filter((id) => id !== tripId)
+      checked ? [...prev, tripId] : prev?.filter((id) => id !== tripId)
     );
   };
 
@@ -252,8 +252,8 @@ const TripsMonitoringManagement = () => {
 
   return (
     <div className="flex h-screen bg-background">
-      <MainSidebar onToggleCollapse={handleToggleSidebar} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <MainSidebar isCollapsed={isSidebarCollapsed} onToggleCollapse={handleToggleSidebar} />
+      <div className={`flex-1 flex flex-col overflow-hidden transition-all duration-300 ${isSidebarCollapsed ? 'ml-[3.75rem]' : 'ml-[15rem]'}`}>
         <BreadcrumbNavigation />
 
         <div className="flex-1 flex overflow-hidden">
@@ -306,8 +306,8 @@ const TripsMonitoringManagement = () => {
                           <input
                             type="checkbox"
                             checked={
-                            selectedTrips?.length === sortedTrips?.length &&
-                            sortedTrips?.length > 0
+                              selectedTrips?.length === sortedTrips?.length &&
+                              sortedTrips?.length > 0
                             }
                             onChange={(e) => handleSelectAll(e?.target?.checked)}
                             className="w-4 h-4 rounded border-border text-primary focus:ring-primary" />
@@ -365,11 +365,11 @@ const TripsMonitoringManagement = () => {
                     </thead>
                     <tbody>
                       {sortedTrips?.map((trip) =>
-                      <TripTableRow
-                        key={trip?.id}
-                        trip={trip}
-                        isSelected={selectedTrips?.includes(trip?.id)}
-                        onSelect={handleSelectTrip} />
+                        <TripTableRow
+                          key={trip?.id}
+                          trip={trip}
+                          isSelected={selectedTrips?.includes(trip?.id)}
+                          onSelect={handleSelectTrip} />
 
                       )}
                     </tbody>

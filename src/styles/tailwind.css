@@ -10,6 +10,7 @@ html {
 }
 
 @theme {
+  --color-border: #E2E8F0;
   --color-appborder: #E2E8F0;
   --color-input: #E2E8F0;
   --color-ring: #2563EB;

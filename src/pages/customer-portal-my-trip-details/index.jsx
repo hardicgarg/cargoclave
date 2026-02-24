@@ -42,97 +42,97 @@ const CustomerPortalMyTripDetails = () => {
     startDate: '2025-01-20 08:00 AM',
     eta: '2025-01-28 2:30 PM',
     checkpoints: [
-    {
-      id: 1,
-      name: 'Los Angeles Distribution Center',
-      address: '1234 Industrial Blvd, Los Angeles, CA 90001',
-      status: 'completed',
-      scheduledTime: '2025-01-20 08:00 AM',
-      actualTime: '2025-01-20 08:15 AM',
-      notes: 'Pickup completed. All items loaded successfully.',
-      proofOfDelivery: "https://images.unsplash.com/photo-1532635026-d12867005472",
-      proofOfDeliveryAlt: 'Warehouse loading dock with packages being loaded onto truck by forklift operator'
-    },
-    {
-      id: 2,
-      name: 'Phoenix Distribution Hub',
-      address: '567 Logistics Way, Phoenix, AZ 85001',
-      status: 'completed',
-      scheduledTime: '2025-01-22 10:00 AM',
-      actualTime: '2025-01-22 10:30 AM',
-      notes: 'Checkpoint passed. Minor delay due to traffic.',
-      proofOfDelivery: "https://images.unsplash.com/photo-1495690129813-e1c60c78f4ec",
-      proofOfDeliveryAlt: 'Distribution hub building exterior with multiple loading bays and parked delivery trucks'
-    },
-    {
-      id: 3,
-      name: 'Kansas City Transit Center',
-      address: '890 Commerce St, Kansas City, MO 64101',
-      status: 'in-progress',
-      scheduledTime: '2025-01-25 3:00 PM',
-      actualTime: null,
-      notes: 'Currently at checkpoint. Refueling and driver rest break.',
-      proofOfDelivery: null,
-      proofOfDeliveryAlt: null
-    },
-    {
-      id: 4,
-      name: 'Chicago Logistics Center',
-      address: '234 Industrial Park Dr, Chicago, IL 60601',
-      status: 'pending',
-      scheduledTime: '2025-01-27 11:00 AM',
-      actualTime: null,
-      notes: null,
-      proofOfDelivery: null,
-      proofOfDeliveryAlt: null
-    },
-    {
-      id: 5,
-      name: 'New York Warehouse',
-      address: '567 Commerce St, New York, NY 10001',
-      status: 'pending',
-      scheduledTime: '2025-01-28 2:30 PM',
-      actualTime: null,
-      notes: null,
-      proofOfDelivery: null,
-      proofOfDeliveryAlt: null
-    }],
+      {
+        id: 1,
+        name: 'Los Angeles Distribution Center',
+        address: '1234 Industrial Blvd, Los Angeles, CA 90001',
+        status: 'completed',
+        scheduledTime: '2025-01-20 08:00 AM',
+        actualTime: '2025-01-20 08:15 AM',
+        notes: 'Pickup completed. All items loaded successfully.',
+        proofOfDelivery: "https://images.unsplash.com/photo-1532635026-d12867005472",
+        proofOfDeliveryAlt: 'Warehouse loading dock with packages being loaded onto truck by forklift operator'
+      },
+      {
+        id: 2,
+        name: 'Phoenix Distribution Hub',
+        address: '567 Logistics Way, Phoenix, AZ 85001',
+        status: 'completed',
+        scheduledTime: '2025-01-22 10:00 AM',
+        actualTime: '2025-01-22 10:30 AM',
+        notes: 'Checkpoint passed. Minor delay due to traffic.',
+        proofOfDelivery: "https://images.unsplash.com/photo-1495690129813-e1c60c78f4ec",
+        proofOfDeliveryAlt: 'Distribution hub building exterior with multiple loading bays and parked delivery trucks'
+      },
+      {
+        id: 3,
+        name: 'Kansas City Transit Center',
+        address: '890 Commerce St, Kansas City, MO 64101',
+        status: 'in-progress',
+        scheduledTime: '2025-01-25 3:00 PM',
+        actualTime: null,
+        notes: 'Currently at checkpoint. Refueling and driver rest break.',
+        proofOfDelivery: null,
+        proofOfDeliveryAlt: null
+      },
+      {
+        id: 4,
+        name: 'Chicago Logistics Center',
+        address: '234 Industrial Park Dr, Chicago, IL 60601',
+        status: 'pending',
+        scheduledTime: '2025-01-27 11:00 AM',
+        actualTime: null,
+        notes: null,
+        proofOfDelivery: null,
+        proofOfDeliveryAlt: null
+      },
+      {
+        id: 5,
+        name: 'New York Warehouse',
+        address: '567 Commerce St, New York, NY 10001',
+        status: 'pending',
+        scheduledTime: '2025-01-28 2:30 PM',
+        actualTime: null,
+        notes: null,
+        proofOfDelivery: null,
+        proofOfDeliveryAlt: null
+      }],
 
     communications: [
-    {
-      date: '2025-01-20 08:30 AM',
-      type: 'notification',
-      message: 'Trip started. Driver en route to Phoenix.',
-      sender: 'System'
-    },
-    {
-      date: '2025-01-22 11:00 AM',
-      type: 'update',
-      message: 'Passed Phoenix checkpoint. Minor 30-minute delay reported.',
-      sender: 'John Mitchell'
-    },
-    {
-      date: '2025-01-25 3:15 PM',
-      type: 'update',
-      message: 'Arrived at Kansas City. Taking scheduled rest break.',
-      sender: 'John Mitchell'
-    }],
+      {
+        date: '2025-01-20 08:30 AM',
+        type: 'notification',
+        message: 'Trip started. Driver en route to Phoenix.',
+        sender: 'System'
+      },
+      {
+        date: '2025-01-22 11:00 AM',
+        type: 'update',
+        message: 'Passed Phoenix checkpoint. Minor 30-minute delay reported.',
+        sender: 'John Mitchell'
+      },
+      {
+        date: '2025-01-25 3:15 PM',
+        type: 'update',
+        message: 'Arrived at Kansas City. Taking scheduled rest break.',
+        sender: 'John Mitchell'
+      }],
 
     documents: [
-    {
-      name: 'Bill of Lading.pdf',
-      type: 'PDF',
-      size: '1.2 MB',
-      uploadedDate: '2025-01-20',
-      url: '#'
-    },
-    {
-      name: 'Delivery Instructions.pdf',
-      type: 'PDF',
-      size: '856 KB',
-      uploadedDate: '2025-01-20',
-      url: '#'
-    }]
+      {
+        name: 'Bill of Lading.pdf',
+        type: 'PDF',
+        size: '1.2 MB',
+        uploadedDate: '2025-01-20',
+        url: '#'
+      },
+      {
+        name: 'Delivery Instructions.pdf',
+        type: 'PDF',
+        size: '856 KB',
+        uploadedDate: '2025-01-20',
+        url: '#'
+      }]
 
   };
 
@@ -172,7 +172,7 @@ const CustomerPortalMyTripDetails = () => {
   return (
     <div className="flex h-screen bg-background">
       <MainSidebar onToggleCollapse={setIsSidebarCollapsed} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <div className="flex-1 flex flex-col overflow-hidden ml-[15rem]">
         <BreadcrumbNavigation />
 
         <div className="flex-1 overflow-y-auto">
@@ -302,12 +302,12 @@ const CustomerPortalMyTripDetails = () => {
 
                 <div className="space-y-4">
                   {tripData?.checkpoints?.map((checkpoint, index) =>
-                  <div key={checkpoint?.id} className="flex gap-4">
+                    <div key={checkpoint?.id} className="flex gap-4">
                       <div className="flex flex-col items-center">
                         {getCheckpointIcon(checkpoint?.status)}
                         {index !== tripData?.checkpoints?.length - 1 &&
-                      <div className="w-0.5 h-full bg-border mt-2" />
-                      }
+                          <div className="w-0.5 h-full bg-border mt-2" />
+                        }
                       </div>
                       <div className="flex-1 pb-4">
                         <div className="flex items-start justify-between mb-1">
@@ -318,24 +318,24 @@ const CustomerPortalMyTripDetails = () => {
                         <div className="text-sm text-foreground mb-2">
                           <span className="text-muted-foreground">Scheduled:</span> {checkpoint?.scheduledTime}
                           {checkpoint?.actualTime &&
-                        <>
+                            <>
                               <br />
                               <span className="text-muted-foreground">Actual:</span> {checkpoint?.actualTime}
                             </>
-                        }
+                          }
                         </div>
                         {checkpoint?.notes &&
-                      <p className="text-sm text-muted-foreground italic">{checkpoint?.notes}</p>
-                      }
+                          <p className="text-sm text-muted-foreground italic">{checkpoint?.notes}</p>
+                        }
                         {checkpoint?.proofOfDelivery &&
-                      <div className="mt-2">
+                          <div className="mt-2">
                             <img
-                          src={checkpoint?.proofOfDelivery}
-                          alt={checkpoint?.proofOfDeliveryAlt}
-                          className="w-32 h-32 object-cover rounded border border-border" />
+                              src={checkpoint?.proofOfDelivery}
+                              alt={checkpoint?.proofOfDeliveryAlt}
+                              className="w-32 h-32 object-cover rounded border border-border" />
 
                           </div>
-                      }
+                        }
                       </div>
                     </div>
                   )}
@@ -350,7 +350,7 @@ const CustomerPortalMyTripDetails = () => {
                   </h3>
                   <div className="space-y-4">
                     {tripData?.communications?.map((comm, index) =>
-                    <div key={index} className="border-l-2 border-primary pl-3">
+                      <div key={index} className="border-l-2 border-primary pl-3">
                         <p className="text-sm text-foreground mb-1">{comm?.message}</p>
                         <div className="text-xs text-muted-foreground">
                           {comm?.sender} • {comm?.date}
@@ -367,9 +367,9 @@ const CustomerPortalMyTripDetails = () => {
                   </h3>
                   <div className="space-y-3">
                     {tripData?.documents?.map((doc, index) =>
-                    <div
-                      key={index}
-                      className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
 
                         <div className="flex items-center gap-2">
                           <Icon name="FileText" size="1rem" className="text-muted-foreground" />

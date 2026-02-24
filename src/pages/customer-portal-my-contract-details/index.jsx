@@ -119,9 +119,8 @@ const CustomerPortalMyContractDetails = () => {
 
     return (
       <span
-        className={`px-3 py-1 rounded-full text-sm font-medium border ${
-          statusColors?.[status] || 'bg-gray-100 text-gray-800 border-gray-200'
-        }`}
+        className={`px-3 py-1 rounded-full text-sm font-medium border ${statusColors?.[status] || 'bg-gray-100 text-gray-800 border-gray-200'
+          }`}
       >
         {status?.replace('-', ' ')?.toUpperCase()}
       </span>
@@ -349,7 +348,7 @@ const CustomerPortalMyContractDetails = () => {
   return (
     <div className="flex h-screen bg-background">
       <MainSidebar onToggleCollapse={setIsSidebarCollapsed} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <div className="flex-1 flex flex-col overflow-hidden ml-[15rem]">
         <BreadcrumbNavigation />
 
         <div className="flex-1 overflow-y-auto">
@@ -384,10 +383,9 @@ const CustomerPortalMyContractDetails = () => {
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`pb-3 text-sm font-medium transition-colors ${
-                      activeTab === tab
-                        ? 'text-primary border-b-2 border-primary' :'text-muted-foreground hover:text-foreground'
-                    }`}
+                    className={`pb-3 text-sm font-medium transition-colors ${activeTab === tab
+                        ? 'text-primary border-b-2 border-primary' : 'text-muted-foreground hover:text-foreground'
+                      }`}
                   >
                     {tab?.charAt(0)?.toUpperCase() + tab?.slice(1)}
                   </button>

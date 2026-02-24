@@ -129,14 +129,13 @@ const CustomerPortalMyDashboard2 = () => {
   return (
     <div className="flex h-screen bg-gray-50">
       <MainSidebar onToggleCollapse={setIsSidebarCollapsed} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <div className="flex-1 flex flex-col overflow-hidden ml-[15rem]">
         <BreadcrumbNavigation />
 
         <div className="flex-1 overflow-y-auto">
           {/* Header */}
-          <div className={`bg-white border-b-4 border-blue-500 px-6 py-6 shadow-md transition-all duration-700 ${
-            visibleItems?.includes(0) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
-          }`}>
+          <div className={`bg-white border-b-4 border-blue-500 px-6 py-6 shadow-md transition-all duration-700 ${visibleItems?.includes(0) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
+            }`}>
             <div className="flex items-center justify-between">
               <div>
                 <h1 className="text-3xl font-bold text-foreground mb-1">My Dashboard 2</h1>
@@ -167,9 +166,8 @@ const CustomerPortalMyDashboard2 = () => {
                 ]?.map((metric) => (
                   <div
                     key={metric?.index}
-                    className={`bg-white rounded-lg shadow-md p-6 border-l-4 border-${metric?.color}-500 transition-all duration-700 hover:shadow-xl ${
-                      visibleItems?.includes(metric?.index) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
-                    }`}
+                    className={`bg-white rounded-lg shadow-md p-6 border-l-4 border-${metric?.color}-500 transition-all duration-700 hover:shadow-xl ${visibleItems?.includes(metric?.index) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <div>
@@ -184,9 +182,8 @@ const CustomerPortalMyDashboard2 = () => {
                 ))}
 
                 {/* Service Providers sliding from left */}
-                <div className={`bg-white rounded-lg shadow-md p-6 transition-all duration-700 ${
-                  visibleItems?.includes(5) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
-                }`}>
+                <div className={`bg-white rounded-lg shadow-md p-6 transition-all duration-700 ${visibleItems?.includes(5) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
+                  }`}>
                   <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <Icon name="Building2" size="1.25rem" />
                     Service Providers
@@ -219,9 +216,8 @@ const CustomerPortalMyDashboard2 = () => {
               {/* Center Column - Timeline */}
               <div className="lg:col-span-2 space-y-6">
                 {/* Activity Timeline sliding from right */}
-                <div className={`bg-white rounded-lg shadow-md p-6 transition-all duration-700 ${
-                  visibleItems?.includes(6) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
-                }`}>
+                <div className={`bg-white rounded-lg shadow-md p-6 transition-all duration-700 ${visibleItems?.includes(6) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+                  }`}>
                   <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
                     <Icon name="Activity" size="1.5rem" />
                     Activity Timeline
@@ -232,9 +228,8 @@ const CustomerPortalMyDashboard2 = () => {
                       {dashboardData?.timeline?.map((item, index) => (
                         <div
                           key={item?.id}
-                          className={`relative pl-12 transition-all duration-700 ${
-                            visibleItems?.includes(7 + index) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
-                          }`}
+                          className={`relative pl-12 transition-all duration-700 ${visibleItems?.includes(7 + index) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+                            }`}
                         >
                           <div className={`absolute left-0 h-10 w-10 rounded-full bg-${item?.color}-100 border-4 border-white shadow-md flex items-center justify-center`}>
                             <Icon name={item?.icon} size="1.125rem" className={`text-${item?.color}-600`} />
@@ -253,9 +248,8 @@ const CustomerPortalMyDashboard2 = () => {
                 </div>
 
                 {/* Recent Trips sliding from right */}
-                <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-all duration-700 ${
-                  visibleItems?.includes(12) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
-                }`}>
+                <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-all duration-700 ${visibleItems?.includes(12) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+                  }`}>
                   <div className="px-6 py-4 bg-blue-500 text-white flex items-center justify-between">
                     <div>
                       <h2 className="text-lg font-bold">Recent Shipments</h2>
@@ -274,9 +268,8 @@ const CustomerPortalMyDashboard2 = () => {
                     {dashboardData?.recentTrips?.map((trip, index) => (
                       <div
                         key={trip?.id}
-                        className={`px-6 py-4 hover:bg-gray-50 transition-all duration-500 ${
-                          visibleItems?.includes(13 + index) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
-                        }`}
+                        className={`px-6 py-4 hover:bg-gray-50 transition-all duration-500 ${visibleItems?.includes(13 + index) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+                          }`}
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex-1 space-y-2">

@@ -103,7 +103,7 @@ const CustomerPortalMyDashboard = () => {
   return (
     <div className="flex h-screen bg-background">
       <MainSidebar onToggleCollapse={setIsSidebarCollapsed} />
-      <div className="flex-1 flex flex-col overflow-hidden ml-[240px]">
+      <div className="flex-1 flex flex-col overflow-hidden ml-[15rem]">
         <BreadcrumbNavigation />
 
         <div className="flex-1 overflow-y-auto">
@@ -368,12 +368,11 @@ const CustomerPortalMyDashboard = () => {
                             <div className="flex-1 max-w-[100px]">
                               <div className="w-full bg-muted rounded-full h-2">
                                 <div
-                                  className={`h-2 rounded-full ${
-                                    provider?.onTimeRate >= 95
+                                  className={`h-2 rounded-full ${provider?.onTimeRate >= 95
                                       ? 'bg-green-500'
                                       : provider?.onTimeRate >= 90
-                                      ? 'bg-yellow-500' :'bg-red-500'
-                                  }`}
+                                        ? 'bg-yellow-500' : 'bg-red-500'
+                                    }`}
                                   style={{ width: `${provider?.onTimeRate}%` }}
                                 />
                               </div>

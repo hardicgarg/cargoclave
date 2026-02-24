@@ -65,11 +65,11 @@ const NewContractCreation = () => {
 
   return (
     <div className="flex h-screen bg-slate-50">
-      <MainSidebar 
+      <MainSidebar
         isCollapsed={isSidebarCollapsed}
         onToggleCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
       />
-      <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarCollapsed ? 'ml-[60px]' : 'ml-[240px]'}`}>
+      <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarCollapsed ? 'ml-[3.75rem]' : 'ml-[15rem]'}`}>
         <BreadcrumbNavigation />
 
         <div className="flex-1 flex overflow-hidden">

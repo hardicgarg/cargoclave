@@ -181,14 +181,33 @@ const RoutePlanningSectionV2 = ({ isExpanded, onToggle, formData, setFormData })
                                     </div>
                                 </div>
 
-                                <Input
-                                    label="Address (Google Search)"
-                                    placeholder="Search address..."
-                                    iconName="Search"
-                                    value={route.source.address}
-                                    onChange={(e) => updateLocation(route.id, 'source', 'address', e.target.value)}
-                                    required
-                                />
+                                <div className="relative group/search">
+                                    <Input
+                                        label="Address (Google Search)"
+                                        placeholder="Search address..."
+                                        iconName="Search"
+                                        value={route.source.address}
+                                        onChange={(e) => updateLocation(route.id, 'source', 'address', e.target.value)}
+                                        required
+                                    />
+                                    {route.source.address.length >= 3 && (
+                                        <div className="absolute z-10 w-full bg-white border border-slate-200 rounded-lg shadow-xl mt-1 py-1 animate-in fade-in slide-in-from-top-2">
+                                            {[
+                                                '123 Industrial Area, Phase II, Bangalore',
+                                                '45 Export Zone, Whitefield, BLR',
+                                                'TechHub Logistics Park, Sarjapur, BLR'
+                                            ].filter(item => item.toLowerCase().includes(route.source.address.toLowerCase())).map(item => (
+                                                <button
+                                                    key={item}
+                                                    onClick={() => updateLocation(route.id, 'source', 'address', item)}
+                                                    className="w-full text-left px-3 py-2 text-xs hover:bg-slate-50 text-slate-700"
+                                                >
+                                                    {item}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
 
                                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                                     <label className="block text-[0.625rem] font-bold text-slate-400 uppercase tracking-widest mb-2">Location SPOC</label>
@@ -249,14 +268,33 @@ const RoutePlanningSectionV2 = ({ isExpanded, onToggle, formData, setFormData })
                                     </div>
                                 </div>
 
-                                <Input
-                                    label="Address (Google Search)"
-                                    placeholder="Search address..."
-                                    iconName="Search"
-                                    value={route.drop.address}
-                                    onChange={(e) => updateLocation(route.id, 'drop', 'address', e.target.value)}
-                                    required
-                                />
+                                <div className="relative group/search">
+                                    <Input
+                                        label="Address (Google Search)"
+                                        placeholder="Search address..."
+                                        iconName="Search"
+                                        value={route.drop.address}
+                                        onChange={(e) => updateLocation(route.id, 'drop', 'address', e.target.value)}
+                                        required
+                                    />
+                                    {route.drop.address.length >= 3 && (
+                                        <div className="absolute z-10 w-full bg-white border border-slate-200 rounded-lg shadow-xl mt-1 py-1 animate-in fade-in slide-in-from-top-2">
+                                            {[
+                                                'Termianl 2, JNPT Port, Mumbai',
+                                                'Gateway CFS, Nhava Sheva, MH',
+                                                'Central Maritime Yard, Uran, MH'
+                                            ].filter(item => item.toLowerCase().includes(route.drop.address.toLowerCase())).map(item => (
+                                                <button
+                                                    key={item}
+                                                    onClick={() => updateLocation(route.id, 'drop', 'address', item)}
+                                                    className="w-full text-left px-3 py-2 text-xs hover:bg-slate-50 text-slate-700"
+                                                >
+                                                    {item}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
 
                                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                                     <label className="block text-[0.625rem] font-bold text-slate-400 uppercase tracking-widest mb-2">Location SPOC</label>
