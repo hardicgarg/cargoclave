@@ -6,55 +6,138 @@ import Button from '../../../components/ui/Button';
 const ContractOverviewSection = ({ isExpanded, onToggle, formData, setFormData }) => {
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, overview: { ...prev.overview, [name]: value } }));
+        if (name.includes('.')) {
+            const [parent, child] = name.split('.');
+            setFormData(prev => ({
+                ...prev,
+                contractInfo: {
+                    ...prev.contractInfo,
+                    [parent]: { ...prev.contractInfo[parent], [child]: value }
+                }
+            }));
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                contractInfo: { ...prev.contractInfo, [name]: value }
+            }));
+        }
     };
 
-    const isCompleted = formData.overview.customer && formData.overview.commodityType;
+    const isCompleted = formData.contractInfo.customerName &&
+        formData.contractInfo.piNumber &&
+        formData.contractInfo.commodity &&
+        formData.contractInfo.containerCount > 0 &&
+        formData.contractInfo.spoc.name &&
+        formData.contractInfo.spoc.email &&
+        formData.contractInfo.spoc.phone;
 
     return (
         <SectionContainer
-            title="Contract Overview"
+            title="Section 1: Contract Information"
             icon="FileText"
             isExpanded={isExpanded}
             onToggle={onToggle}
             isMandatory={true}
             isCompleted={isCompleted}
         >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">Customer</label>
-                        <div className="flex space-x-2">
-                            <select
-                                name="customer"
-                                value={formData.overview.customer}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                    <Input
+                        label="Customer Name"
+                        name="customerName"
+                        value={formData.contractInfo.customerName}
+                        onChange={handleChange}
+                        placeholder="Enter legal entity name"
+                        required
+                    />
+
+                    <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Customer SPOC Details</h4>
+                        <div className="space-y-4">
+                            <Input
+                                label="Name"
+                                name="spoc.name"
+                                value={formData.contractInfo.spoc.name}
                                 onChange={handleChange}
-                                className="flex-1 rounded-lg border border-slate-200 p-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                                placeholder="Primary contact name"
+                                required
+                            />
+                            <div className="grid grid-cols-2 gap-4">
+                                <Input
+                                    label="Email"
+                                    name="spoc.email"
+                                    type="email"
+                                    value={formData.contractInfo.spoc.email}
+                                    onChange={handleChange}
+                                    placeholder="email@company.com"
+                                    required
+                                />
+                                <Input
+                                    label="Phone"
+                                    name="spoc.phone"
+                                    value={formData.contractInfo.spoc.phone}
+                                    onChange={handleChange}
+                                    placeholder="+1 234 567 890"
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="space-y-6">
+                    <div className="grid grid-cols-2 gap-4">
+                        <Input
+                            label="P.I. Number"
+                            name="piNumber"
+                            value={formData.contractInfo.piNumber}
+                            onChange={handleChange}
+                            placeholder="e.g. PI-2024-001"
+                            required
+                        />
+                        <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-1">Commodity <span className="text-destructive">*</span></label>
+                            <select
+                                name="commodity"
+                                value={formData.contractInfo.commodity}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                                required
                             >
-                                <option value="">Select Customer</option>
-                                <option value="Global Logistics Inc.">Global Logistics Inc.</option>
-                                <option value="Maritime Express">Maritime Express</option>
-                                <option value="TechSupply Corp">TechSupply Corp</option>
+                                <option value="">Select Commodity</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Garments">Garments</option>
+                                <option value="Automotive Parts">Automotive Parts</option>
+                                <option value="Perishables">Perishables</option>
                             </select>
-                            <Button variant="outline" size="sm" iconName="Plus" />
                         </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                         <Input
-                            label="P.I. Number"
-                            name="piNumber"
-                            value={formData.overview.piNumber}
-                            onChange={handleChange}
-                            placeholder="e.g. PI-2024-001"
-                        />
-                        <Input
-                            label="Total No. of Containers"
+                            label="No. of Containers"
                             type="number"
-                            name="totalContainers"
-                            value={formData.overview.totalContainers}
+                            name="containerCount"
+                            value={formData.contractInfo.containerCount}
                             onChange={handleChange}
+                            required
                         />
+                        <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-1">Container Type <span className="text-destructive">*</span></label>
+                            <select
+                                name="containerType"
+                                value={formData.contractInfo.containerType}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                                required
+                            >
+                                <option value="">Select Type</option>
+                                <option value="20ft Standard">20ft Standard</option>
+                                <option value="40ft Standard">40ft Standard</option>
+                                <option value="40ft High Cube">40ft High Cube</option>
+                                <option value="Reefer">Reefer</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
@@ -62,54 +145,18 @@ const ContractOverviewSection = ({ isExpanded, onToggle, formData, setFormData }
                             label="Start Date"
                             type="date"
                             name="startDate"
-                            value={formData.overview.startDate}
+                            value={formData.contractInfo.startDate}
                             onChange={handleChange}
+                            required
                         />
                         <Input
                             label="End Date"
                             type="date"
                             name="endDate"
-                            value={formData.overview.endDate}
+                            value={formData.contractInfo.endDate}
                             onChange={handleChange}
+                            required
                         />
-                    </div>
-                </div>
-
-                <div className="space-y-6">
-                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                        <h4 className="text-sm font-semibold text-slate-900 mb-4">Movement Mode</h4>
-                        <div className="flex flex-wrap gap-4">
-                            {['Through Truck', 'Through Trailer', 'Both'].map((mode) => (
-                                <label key={mode} className="flex items-center space-x-2 cursor-pointer group">
-                                    <input
-                                        type="radio"
-                                        name="movementMode"
-                                        value={mode}
-                                        checked={formData.overview.movementMode === mode}
-                                        onChange={handleChange}
-                                        className="w-4 h-4 text-blue-600 focus:ring-blue-500 border-slate-300"
-                                    />
-                                    <span className="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">{mode}</span>
-                                </label>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">Movement Pattern</label>
-                        <select
-                            name="movementPattern"
-                            value={formData.overview.movementPattern}
-                            onChange={handleChange}
-                            className="w-full rounded-lg border border-slate-200 p-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-                        >
-                            <option value="Factory → CFS → Port">Factory → CFS → Port</option>
-                            <option value="Factory → Port">Factory → Port</option>
-                            <option value="Custom Flow">Custom Flow</option>
-                        </select>
-                        <p className="mt-2 text-[0.6875rem] text-slate-400">
-                            * This pattern pre-configures recommended lifecycle stages.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -120,8 +167,9 @@ const ContractOverviewSection = ({ isExpanded, onToggle, formData, setFormData }
                     onClick={onToggle}
                     iconName="ChevronDown"
                     iconPosition="right"
+                    disabled={!isCompleted}
                 >
-                    Next: Route Planning
+                    Next: Route Information
                 </Button>
             </div>
         </SectionContainer>

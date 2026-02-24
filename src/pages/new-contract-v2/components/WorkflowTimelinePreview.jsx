@@ -15,8 +15,10 @@ const WorkflowTimelinePreview = ({ isExpanded, onToggle, formData }) => {
         steps.push({ label: 'LOADING', type: 'op', icon: 'PackageOpen' });
         if (formData.lifecycle.truck.factoryOut.enabled) steps.push({ label: 'Factory WB OUT', type: 'check', icon: 'Scale' });
 
-        // 3. Travel to CFS (if applicable)
-        steps.push({ label: 'TRANSIT', type: 'travel', icon: 'Truck' });
+        // 3. Optional Surveys
+        if (formData.surveyInfo.required) {
+            steps.push({ label: 'PRE-TRANSIT SURVEY', type: 'survey', icon: 'SearchCheck' });
+        }
 
         // 4. CFS Stages
         if (formData.lifecycle.truck.cfsIn.enabled) steps.push({ label: 'CFS WB IN', type: 'check', icon: 'Scale' });

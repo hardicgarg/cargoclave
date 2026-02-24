@@ -1,107 +1,290 @@
 import React from 'react';
 import SectionContainer from './SectionContainer';
+import Input from '../../../components/ui/Input';
+import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
 
 const SurveyConfigurationSection = ({ isExpanded, onToggle, formData, setFormData }) => {
-    // Check if any survey stage is enabled in the lifecycle
-    const anySurveyEnabled =
-        formData.lifecycle.trailer.yardSurvey.enabled ||
-        formData.lifecycle.trailer.cfsSurvey.enabled ||
-        formData.lifecycle.trailer.portSurvey.enabled;
-
-    if (!anySurveyEnabled) return null;
-
-    const handleChange = (field, value) => {
+    const toggleRequirement = () => {
         setFormData(prev => ({
             ...prev,
-            survey: { ...prev.survey, [field]: value }
+            surveyInfo: { ...prev.surveyInfo, required: !prev.surveyInfo.required }
         }));
     };
 
-    const enabledStages = [
-        formData.lifecycle.trailer.yardSurvey.enabled && 'Yard',
-        formData.lifecycle.trailer.cfsSurvey.enabled && 'CFS',
-        formData.lifecycle.trailer.portSurvey.enabled && 'Port'
-    ].filter(Boolean);
+    const addContainer = () => {
+        setFormData(prev => ({
+            ...prev,
+            surveyInfo: {
+                ...prev.surveyInfo,
+                containers: [
+                    ...prev.surveyInfo.containers,
+                    { id: Date.now(), number: '', type: '', surveys: [] }
+                ]
+            }
+        }));
+    };
+
+    const removeContainer = (id) => {
+        setFormData(prev => ({
+            ...prev,
+            surveyInfo: {
+                ...prev.surveyInfo,
+                containers: prev.surveyInfo.containers.filter(c => c.id !== id)
+            }
+        }));
+    };
+
+    const updateContainer = (id, field, value) => {
+        setFormData(prev => ({
+            ...prev,
+            surveyInfo: {
+                ...prev.surveyInfo,
+                containers: prev.surveyInfo.containers.map(c => c.id === id ? { ...c, [field]: value } : c)
+            }
+        }));
+    };
+
+    const addSurvey = (containerId) => {
+        setFormData(prev => ({
+            ...prev,
+            surveyInfo: {
+                ...prev.surveyInfo,
+                containers: prev.surveyInfo.containers.map(c => c.id === containerId ? {
+                    ...c,
+                    surveys: [
+                        ...c.surveys,
+                        {
+                            id: Date.now(),
+                            type: 'Yard Survey',
+                            surveyor: { name: '', email: '', phone: '' },
+                            location: '',
+                            date: '',
+                            priority: 'Medium'
+                        }
+                    ]
+                } : c)
+            }
+        }));
+    };
+
+    const updateSurvey = (containerId, surveyId, field, value) => {
+        setFormData(prev => ({
+            ...prev,
+            surveyInfo: {
+                ...prev.surveyInfo,
+                containers: prev.surveyInfo.containers.map(c => {
+                    if (c.id === containerId) {
+                        return {
+                            ...c,
+                            surveys: c.surveys.map(s => {
+                                if (s.id === surveyId) {
+                                    if (field.startsWith('surveyor.')) {
+                                        const sField = field.split('.')[1];
+                                        return { ...s, surveyor: { ...s.surveyor, [sField]: value } };
+                                    }
+                                    return { ...s, [field]: value };
+                                }
+                                return s;
+                            })
+                        };
+                    }
+                    return c;
+                })
+            }
+        }));
+    };
+
+    const removeSurvey = (containerId, surveyId) => {
+        setFormData(prev => ({
+            ...prev,
+            surveyInfo: {
+                ...prev.surveyInfo,
+                containers: prev.surveyInfo.containers.map(c => c.id === containerId ? {
+                    ...c,
+                    surveys: c.surveys.filter(s => s.id !== surveyId)
+                } : c)
+            }
+        }));
+    };
+
+    const isCompleted = !formData.surveyInfo.required ||
+        (formData.surveyInfo.containers.length > 0 &&
+            formData.surveyInfo.containers.every(c => c.number && c.type));
 
     return (
         <SectionContainer
-            title="Survey Configuration"
+            title="Section 3: Surveyor Information"
             icon="ClipboardCheck"
             isExpanded={isExpanded}
             onToggle={onToggle}
-            isCompleted={true}
+            isMandatory={false}
+            isCompleted={isCompleted}
         >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="space-y-6">
-                    <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-200">
-                        <div>
-                            <h5 className="text-sm font-semibold text-slate-900">Container-level Surveys</h5>
-                            <p className="text-[0.625rem] text-slate-500 mt-0.5 whitespace-nowrap">Perform individual checks for every container in a trip.</p>
-                        </div>
-                        <button
-                            onClick={() => handleChange('containerLevel', !formData.survey.containerLevel)}
-                            className={`w-12 h-6 rounded-full transition-colors relative ${formData.survey.containerLevel ? 'bg-blue-600' : 'bg-slate-300'}`}
-                        >
-                            <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all ${formData.survey.containerLevel ? 'left-7' : 'left-1'}`} />
-                        </button>
-                    </div>
-
+            <div className="space-y-8">
+                <label className="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer group hover:bg-white transition-all">
+                    <input
+                        type="checkbox"
+                        checked={formData.surveyInfo.required}
+                        onChange={toggleRequirement}
+                        className="w-5 h-5 rounded text-blue-600 focus:ring-blue-500 border-slate-300"
+                    />
                     <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">Default Surveyor Assignment</label>
-                        <select
-                            value={formData.survey.surveyorAssignment}
-                            onChange={(e) => handleChange('surveyorAssignment', e.target.value)}
-                            className="w-full rounded-lg border border-slate-200 p-2.5 text-sm outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                        >
-                            <option value="Auto-assign from pool">Auto-assign from Region Pool</option>
-                            <option value="Third-party: SGS Global">Third-party: SGS Global</option>
-                            <option value="In-house Team Only">In-house Team Only</option>
-                            <option value="Manual Selection per Trip">Manual Selection per Trip</option>
-                        </select>
+                        <span className="block font-bold text-slate-800">Is Survey Required?</span>
+                        <span className="text-xs text-slate-500">Enable this if specific cargo surveys are needed at any stage.</span>
                     </div>
+                </label>
 
-                    <div className="flex items-start space-x-3 p-4 bg-amber-50 rounded-xl border border-amber-100">
-                        <Icon name="AlertCircle" size="1rem" className="text-amber-600 mt-0.5" />
-                        <p className="text-[0.6875rem] text-amber-800 leading-relaxed font-medium">
-                            You have {enabledStages.length} survey stages enabled. System will auto-enforce linear dependency:
-                            **{enabledStages.join(' → ')}**.
-                        </p>
-                    </div>
-                </div>
+                {formData.surveyInfo.required && (
+                    <div className="space-y-6 animate-fade-in">
+                        <div className="border-l-4 border-blue-500 pl-6 space-y-8">
+                            {formData.surveyInfo.containers.map((container, cIndex) => (
+                                <div key={container.id} className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm relative">
+                                    <button onClick={() => removeContainer(container.id)} className="absolute top-4 right-4 text-slate-300 hover:text-red-500">
+                                        <Icon name="Trash2" size="1rem" />
+                                    </button>
 
-                <div className="space-y-4">
-                    <h5 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Survey Permissions</h5>
-                    <div className="space-y-3">
-                        {[
-                            { key: 'allowMultiple', label: 'Allow Multiple Surveys per Stage', desc: 'Permits re-surveying if initial check fails.' },
-                            { key: 'photoMandatory', label: 'Mandatory Photo Upload', desc: 'Requires at least 4 photos for survey approval.' },
-                            { key: 'digitalSignature', label: 'Digital Sign-off Required', desc: 'Driver must sign survey report on-site.' }
-                        ].map((item) => (
-                            <label key={item.key} className="flex items-start space-x-3 p-3 rounded-lg border border-slate-100 hover:bg-slate-50/50 cursor-pointer transition-colors group">
-                                <input
-                                    type="checkbox"
-                                    checked={formData.survey?.[item.key]}
-                                    onChange={() => handleChange(item.key, !formData.survey?.[item.key])}
-                                    className="mt-1 w-4 h-4 rounded text-blue-600 border-slate-300"
-                                />
-                                <div>
-                                    <span className="block text-sm font-semibold text-slate-700 group-hover:text-slate-900 transition-colors">{item.label}</span>
-                                    <span className="text-[0.625rem] text-slate-400">{item.desc}</span>
+                                    <div className="flex items-center space-x-3 mb-6">
+                                        <span className="text-xs font-black text-slate-400 uppercase tracking-tighter">Container Entry {cIndex + 1}</span>
+                                    </div>
+
+                                    <div className="grid grid-cols-2 gap-6 mb-8">
+                                        <Input
+                                            label="Container Number"
+                                            placeholder="e.g. MSCU1234567"
+                                            value={container.number}
+                                            onChange={(e) => updateContainer(container.id, 'number', e.target.value)}
+                                            required
+                                        />
+                                        <Input
+                                            label="Container Type"
+                                            placeholder="e.g. 40ft HC"
+                                            value={container.type}
+                                            onChange={(e) => updateContainer(container.id, 'type', e.target.value)}
+                                            required
+                                        />
+                                    </div>
+
+                                    {/* Surveys for this container */}
+                                    <div className="space-y-4">
+                                        <h5 className="text-[0.625rem] font-black text-slate-400 uppercase tracking-widest flex items-center space-x-2">
+                                            <Icon name="Search" size="0.75rem" />
+                                            <span>Nested Survey Records</span>
+                                        </h5>
+
+                                        <div className="grid grid-cols-1 gap-4">
+                                            {container.surveys.map((survey) => (
+                                                <div key={survey.id} className="p-4 bg-blue-50/30 rounded-lg border border-blue-100 relative group">
+                                                    <button onClick={() => removeSurvey(container.id, survey.id)} className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-400 hover:text-red-500 transition-opacity">
+                                                        <Icon name="X" size="1rem" />
+                                                    </button>
+
+                                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                                        <div className="space-y-4">
+                                                            <div className="grid grid-cols-2 gap-4">
+                                                                <div>
+                                                                    <label className="block text-[0.6875rem] font-bold text-slate-500 mb-1 leading-none">Type <span className="text-destructive">*</span></label>
+                                                                    <select
+                                                                        value={survey.type}
+                                                                        onChange={(e) => updateSurvey(container.id, survey.id, 'type', e.target.value)}
+                                                                        className="w-full rounded-md border border-slate-200 bg-white p-2 text-xs"
+                                                                    >
+                                                                        <option>Yard Survey</option>
+                                                                        <option>CFS Survey</option>
+                                                                        <option>Port Survey</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div>
+                                                                    <label className="block text-[0.6875rem] font-bold text-slate-500 mb-1 leading-none">Priority <span className="text-destructive">*</span></label>
+                                                                    <select
+                                                                        value={survey.priority}
+                                                                        onChange={(e) => updateSurvey(container.id, survey.id, 'priority', e.target.value)}
+                                                                        className="w-full rounded-md border border-slate-200 bg-white p-2 text-xs"
+                                                                    >
+                                                                        <option>Low</option>
+                                                                        <option>Medium</option>
+                                                                        <option>High</option>
+                                                                        <option>Urgent</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <Input
+                                                                label="Survey Location (Google Search)"
+                                                                iconName="Search"
+                                                                placeholder="Auto-suggest facility..."
+                                                                className="h-9 text-xs"
+                                                                value={survey.location}
+                                                                onChange={(e) => updateSurvey(container.id, survey.id, 'location', e.target.value)}
+                                                            />
+                                                            <Input
+                                                                label="Survey Date"
+                                                                type="date"
+                                                                className="h-9 text-xs"
+                                                                value={survey.date}
+                                                                onChange={(e) => updateSurvey(container.id, survey.id, 'date', e.target.value)}
+                                                                description={`Must be before ${formData.contractInfo.endDate || 'End Date'}`}
+                                                            />
+                                                        </div>
+
+                                                        <div className="p-4 bg-white rounded-lg border border-blue-100 shadow-sm space-y-3">
+                                                            <label className="block text-[0.625rem] font-black text-blue-500 uppercase">Surveyor SPOC</label>
+                                                            <Input
+                                                                placeholder="Surveyor Name"
+                                                                className="h-8 text-xs font-semibold"
+                                                                value={survey.surveyor.name}
+                                                                onChange={(e) => updateSurvey(container.id, survey.id, 'surveyor.name', e.target.value)}
+                                                            />
+                                                            <div className="grid grid-cols-1 gap-2">
+                                                                <Input
+                                                                    placeholder="Email Address"
+                                                                    className="h-8 text-xs"
+                                                                    value={survey.surveyor.email}
+                                                                    onChange={(e) => updateSurvey(container.id, survey.id, 'surveyor.email', e.target.value)}
+                                                                />
+                                                                <Input
+                                                                    placeholder="Phone Number"
+                                                                    className="h-8 text-xs"
+                                                                    value={survey.surveyor.phone}
+                                                                    onChange={(e) => updateSurvey(container.id, survey.id, 'surveyor.phone', e.target.value)}
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+
+                                            <button onClick={() => addSurvey(container.id)} className="flex items-center space-x-2 text-blue-600 text-xs font-bold hover:text-blue-700 p-2 border border-dashed border-blue-200 rounded-lg bg-blue-50/50 justify-center">
+                                                <Icon name="Plus" size="1rem" />
+                                                <span>Add Survey Record for this Container</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </label>
-                        ))}
+                            ))}
+
+                            <Button
+                                variant="outline"
+                                iconName="Plus"
+                                onClick={addContainer}
+                                className="w-full border-blue-200 text-blue-600 hover:bg-blue-50 shadow-none border-t-0 rounded-t-none"
+                            >
+                                Add Another Container Section
+                            </Button>
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
 
             <div className="mt-10 pt-6 border-t border-slate-100 flex justify-end">
-                <button
+                <Button
+                    variant="default"
                     onClick={onToggle}
-                    className="bg-slate-900 text-white px-8 py-2.5 rounded-lg font-bold text-sm hover:bg-slate-800 transition-all shadow-sm hover:shadow-md"
+                    disabled={!isCompleted}
+                    iconName="ChevronDown"
+                    iconPosition="right"
                 >
-                    Review Workflow Pipeline
-                </button>
+                    Final Step: Workflow Preview
+                </Button>
             </div>
         </SectionContainer>
     );

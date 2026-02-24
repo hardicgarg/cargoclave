@@ -25,24 +25,33 @@ const NewContractV2 = () => {
     });
 
     const [formData, setFormData] = useState({
-        overview: {
-            customer: '',
+        contractInfo: {
+            customerName: '',
+            spoc: { name: '', email: '', phone: '' },
             piNumber: '',
-            commodityType: 'Electronics',
-            totalContainers: 10,
-            containerType: '40ft Dry',
+            commodity: '',
+            containerCount: 0,
+            containerType: '',
             startDate: '',
-            endDate: '',
-            movementMode: 'Through Truck',
-            movementPattern: 'Factory → CFS → Port'
+            endDate: ''
         },
         routes: [
             {
-                id: 1,
-                name: 'Main Logistics Corridor',
-                containers: 10,
-                source: { name: 'TechHub Factory', address: 'Bangalore, KA', type: 'Factory' },
-                drop: { name: 'JNPT Port', address: 'Mumbai, MH', type: 'Port' },
+                id: Date.now(),
+                name: '',
+                containers: 0,
+                source: {
+                    name: '',
+                    address: '',
+                    type: 'Factory',
+                    spoc: { name: '', email: '', phone: '' }
+                },
+                drop: {
+                    name: '',
+                    address: '',
+                    type: 'Port',
+                    spoc: { name: '', email: '', phone: '' }
+                },
                 stops: []
             }
         ],
@@ -62,12 +71,16 @@ const NewContractV2 = () => {
                 portWbIn: { enabled: false, blocking: false }
             }
         },
-        survey: {
-            containerLevel: true,
-            surveyorAssignment: 'Auto-assign from pool',
-            allowMultiple: false,
-            photoMandatory: true,
-            digitalSignature: true
+        surveyInfo: {
+            required: false,
+            containers: [
+                {
+                    id: Date.now(),
+                    number: '',
+                    type: '',
+                    surveys: []
+                }
+            ]
         }
     });
 
@@ -83,16 +96,14 @@ const NewContractV2 = () => {
     };
 
     const isSurveyNeeded = useMemo(() => {
-        return formData.lifecycle.trailer.yardSurvey.enabled ||
-            formData.lifecycle.trailer.cfsSurvey.enabled ||
-            formData.lifecycle.trailer.portSurvey.enabled;
-    }, [formData.lifecycle]);
+        return formData.surveyInfo.required;
+    }, [formData.surveyInfo.required]);
 
     const steps = [
-        { label: 'Contract Overview', completed: !!formData.overview.customer, active: expandedSections.overview },
-        { label: 'Route Planning', completed: formData.routes.length > 0, active: expandedSections.routes },
+        { label: 'Contract Information', completed: !!formData.contractInfo.customerName, active: expandedSections.overview },
+        { label: 'Route Information', completed: formData.routes.length > 0, active: expandedSections.routes },
         { label: 'Lifecycle Config', completed: true, active: expandedSections.lifecycle },
-        ...(isSurveyNeeded ? [{ label: 'Survey Rules', completed: true, active: expandedSections.survey }] : []),
+        ...(isSurveyNeeded ? [{ label: 'Surveyor Information', completed: true, active: expandedSections.survey }] : []),
         { label: 'Workflow Preview', completed: false, active: expandedSections.preview }
     ];
 
