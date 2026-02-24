@@ -27,7 +27,8 @@ const MainSidebar = ({ onToggleCollapse }) => {
       items: [
         { name: 'Contracts', icon: 'FileText', path: '/contracts-management' },
         { name: 'Trips Monitoring', icon: 'MapPin', path: '/trips-monitoring-management' },
-        { name: 'New Contract', icon: 'Plus', path: '/new-contract-creation' }
+        { name: 'New Contract', icon: 'Plus', path: '/new-contract-creation' },
+        { name: 'Create Contract V2', icon: 'FilePlus', path: '/new-contract-v2' }
       ]
     },
     {

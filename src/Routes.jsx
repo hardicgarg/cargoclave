@@ -33,6 +33,7 @@ import CustomerPortalMyDashboard3 from 'pages/customer-portal-my-dashboard-3';
 import UsersRolesManagement from './pages/users-roles-management';
 import NotificationUseCaseMappingConfiguration from './pages/notification-use-case-mapping-configuration';
 import NotificationTemplateDesigner from './pages/notification-template-designer';
+import NewContractV2 from './pages/new-contract-v2';
 import UnifiedNotificationTemplateDesignerUseCaseMapping from './pages/unified-notification-template-designer-use-case-mapping';
 
 const AppRoutes = () => {
@@ -52,6 +53,7 @@ const AppRoutes = () => {
             <Route path="/contract-details-management" element={<ContractDetailsManagement />} />
             <Route path="/login-authentication" element={<LoginAuthentication />} />
             <Route path="/new-contract-creation" element={<NewContractCreation />} />
+            <Route path="/new-contract-v2" element={<NewContractV2 />} />
             <Route path="/operations-dashboard" element={<OperationsDashboard />} />
             <Route path="/customer-operations-dashboard" element={<CustomerOperationsDashboard />} />
             <Route path="/fleet-management-dashboard" element={<FleetManagementDashboard />} />
