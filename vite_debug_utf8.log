@@ -1,0 +1,2492 @@
+﻿node.exe : 2026-02-23T
+15:04:11.041Z 
+vite:config config 
+file loaded in 
+588.21ms
+At line:1 char:1
++ & "C:\Program Files\
+nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : 
+NotSpecified: (2    
+026-02-23T15:0...ded  
+   in 
+588.21ms:String) [    
+], RemoteException
+    + 
+FullyQualifiedError   
+ Id : 
+NativeCommandErr    or
+ 
+2026-02-23T15:04:11.04
+6Z vite:env loading 
+env files: [
+  'C:/Users/hardi/Down
+loads/cargoclave 
+(11)/cargoclave/.env',
+  'C:/Users/hardi/Down
+loads/cargoclave (11)/
+cargoclave/.env.local'
+,
+  'C:/Users/hardi/Down
+loads/cargoclave (11)/
+cargoclave/.env.develo
+pment',
+  'C:/Users/hardi/Down
+loads/cargoclave (11)/
+cargoclave/.env.develo
+pment.local'
+]
+2026-02-23T15:04:11.04
+8Z vite:env env files 
+loaded in 2.40ms
+2026-02-23T15:04:11.05
+0Z vite:env using 
+resolved env: {
+  VITE_SUPABASE_URL: '
+https://dummy.supabase
+.co',
+  VITE_SUPABASE_ANON_K
+EY: 'dummykey.updateyo
+urkkey.here',
+  
+VITE_OPENAI_API_KEY: '
+your-openai-api-key-he
+re',
+  
+VITE_GEMINI_API_KEY: '
+your-gemini-api-key-he
+re',
+  VITE_ANTHROPIC_API_K
+EY: 'your-anthropic-ap
+i-key-here',
+  VITE_GOOGLE_ANALYTIC
+S_ID: 'your-google-ana
+lytics-id-here',
+  VITE_ADSENSE_ID: 'yo
+ur-adsense-id-here',
+  VITE_PERPLEXITY_API_
+KEY: 'your-perplexity-
+api-key-here',
+  VITE_STRIPE_PUBLISHA
+BLE_KEY: 'your-stripe-
+publishable-key-here'
+}
+2026-02-23T15:04:11.08
+1Z vite:config using 
+resolved config: {
+  build: {
+    target: [ 
+'chrome107', 
+'edge107', 
+'firefox104', 
+'safari16' ],
+    polyfillModulePrel
+oad: true,
+    modulePreload: { 
+polyfill: true },
+    outDir: 'build',
+    assetsDir: 
+'assets',
+    
+assetsInlineLimit: 
+4096,
+    sourcemap: false,
+    terserOptions: {},
+    rollupOptions: { 
+onwarn: [Function: 
+onwarn] },
+    commonjsOptions: 
+{ include: [ 
+/node_modules/ ], 
+extensions: [ '.js', 
+'.cjs' ] },
+    dynamicImportVarsO
+ptions: { 
+warnOnError: true, 
+exclude: [ 
+/node_modules/ ] },
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: 
+true,
+    license: false,
+    manifest: false,
+    lib: false,
+    ssrManifest: 
+false,
+    ssrEmitAssets: 
+false,
+    
+reportCompressedSize: 
+true,
+    chunkSizeWarningLi
+mit: 2000,
+    watch: null,
+    cssCodeSplit: 
+true,
+    minify: 'esbuild',
+    ssr: false,
+    emitAssets: false,
+    
+createEnvironment: 
+[Function: 
+createEnvironment],
+    cssTarget: [ 
+'chrome107', 
+'edge107', 
+'firefox104', 
+'safari16' ],
+    cssMinify: true
+  },
+  plugins: [
+    
+'vite:optimized-deps',
+    'vite:watch-packag
+e-data',
+    'vite:pre-alias',
+    'alias',
+    '@tailwindcss/vite
+:scan',
+    '@tailwindcss/vite
+:generate:serve',
+    
+'vite-tsconfig-paths',
+    
+'vite:react-babel',
+    
+'vite:react-refresh',
+    'vite:modulepreloa
+d-polyfill',
+    'vite:resolve',
+    'vite:html-inline-
+proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    
+'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    'vite:react-virtua
+l-preamble',
+    
+'vite:wasm-fallback',
+    'vite:define',
+    'vite:css-post',
+    'vite:worker-impor
+t-meta-url',
+    'vite:asset-import
+-meta-url',
+    'vite:dynamic-impo
+rt-vars',
+    
+'vite:import-glob',
+    
+'vite:client-inject',
+    
+'vite:css-analysis',
+    
+'vite:import-analysis'
+  ],
+  server: {
+    port: '4028',
+    strictPort: true,
+    host: '0.0.0.0',
+    allowedHosts: [
+      
+'.amazonaws.com',
+      '.builtwithrocke
+t.new',
+      '0.0.0.0',
+      '0.0.0.0',
+      '0.0.0.0',
+      '0.0.0.0'
+    ],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?
+:\/\/(?:(?:[^:]+\.)?lo
+calhost|127\.0\.0\.1|\
+[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { 
+clientFiles: [], 
+ssrFiles: [] },
+    middlewareMode: 
+false,
+    fs: {
+      strict: true,
+      deny: [ '.env', 
+'.env.*', 
+'*.{crt,pem}', 
+'**/.git/**' ],
+      allow: [ 'C:/Use
+rs/hardi/Downloads/car
+goclave 
+(11)/cargoclave' ]
+    },
+    
+preTransformRequests: 
+true,
+    perEnvironmentStar
+tEndDuringDev: false,
+    perEnvironmentWatc
+hChangeDuringDev: 
+false,
+    
+sourcemapIgnoreList: 
+[Function: 
+isInNodeModules]
+  },
+  esbuild: {
+    jsxDev: true,
+    charset: 'utf8',
+    legalComments: 
+'none',
+    jsx: 'automatic',
+    jsxImportSource: 
+undefined
+  },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react/jsx-dev-r
+untime',
+      
+'react/jsx-runtime'
+    ],
+    exclude: [],
+    needsInterop: [],
+    extensions: [],
+    disabled: 
+undefined,
+    
+holdUntilCrawlEnd: 
+true,
+    force: false,
+    ignoreOutdatedRequ
+ests: false,
+    noDiscovery: 
+false,
+    esbuildOptions: { 
+preserveSymlinks: 
+false, jsx: 
+'automatic' }
+  },
+  environments: {
+    client: {
+      define: 
+undefined,
+      resolve: {
+        
+externalConditions: [ 
+'node', 'module-sync' 
+],
+        extensions: [
+          '.mjs',  
+'.js',
+          '.mts',  
+'.ts',
+          '.jsx',  
+'.tsx',
+          '.json'
+        ],
+        dedupe: [],
+        noExternal: 
+[],
+        external: [],
+        
+preserveSymlinks: 
+false,
+        alias: [
+          {
+            find: 
+/^\/?@vite\/env/,
+            
+replacement: '/@fs/C:/
+Users/hardi/Downloads/
+cargoclave (11)/cargoc
+lave/node_modules/vite
+/dist/client/env.mjs'
+          },
+          {
+            find: 
+/^\/?@vite\/client/,
+            
+replacement: '/@fs/C:/
+Users/hardi/Downloads/
+cargoclave (11)/cargoc
+lave/node_modules/vite
+/dist/client/client.mj
+s'
+          }
+        ],
+        mainFields: [ 
+'browser', 'module', 
+'jsnext:main', 
+'jsnext' ],
+        conditions: [ 
+'module', 'browser', '
+development|production
+' ],
+        builtins: []
+      },
+      keepProcessEnv: 
+false,
+      consumer: 
+'client',
+      optimizeDeps: {
+        include: [
+          'react',
+          'react-dom',
+          'react/jsx-d
+ev-runtime',
+          
+'react/jsx-runtime'
+        ],
+        exclude: [],
+        needsInterop: 
+[],
+        extensions: 
+[],
+        disabled: 
+undefined,
+        
+holdUntilCrawlEnd: 
+true,
+        force: false,
+        ignoreOutdated
+Requests: false,
+        noDiscovery: 
+false,
+        
+esbuildOptions: { 
+preserveSymlinks: 
+false, jsx: 
+'automatic' }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { 
+js: true },
+        
+sourcemapIgnoreList: 
+[Function: 
+isInNodeModules],
+        
+preTransformRequests: 
+true,
+        
+createEnvironment: 
+[Function: defaultCrea
+teClientDevEnvironment
+],
+        recoverable: 
+true,
+        moduleRunnerTr
+ansform: false
+      },
+      build: {
+        target: [ 
+'chrome107', 
+'edge107', 
+'firefox104', 
+'safari16' ],
+        polyfillModule
+Preload: true,
+        
+modulePreload: { 
+polyfill: true },
+        outDir: 
+'build',
+        assetsDir: 
+'assets',
+        
+assetsInlineLimit: 
+4096,
+        sourcemap: 
+false,
+        
+terserOptions: {},
+        
+rollupOptions: { 
+onwarn: [Function: 
+onwarn] },
+        
+commonjsOptions: { 
+include: [ 
+/node_modules/ ], 
+extensions: [ '.js', 
+'.cjs' ] },
+        dynamicImportV
+arsOptions: { 
+warnOnError: true, 
+exclude: [ 
+/node_modules/ ] },
+        write: true,
+        emptyOutDir: 
+null,
+        
+copyPublicDir: true,
+        license: 
+false,
+        manifest: 
+false,
+        lib: false,
+        ssrManifest: 
+false,
+        
+ssrEmitAssets: false,
+        
+reportCompressedSize: 
+true,
+        chunkSizeWarni
+ngLimit: 2000,
+        watch: null,
+        cssCodeSplit: 
+true,
+        minify: 
+'esbuild',
+        ssr: false,
+        emitAssets: 
+true,
+        
+createEnvironment: 
+[Function: 
+createEnvironment],
+        cssTarget: [ 
+'chrome107', 
+'edge107', 
+'firefox104', 
+'safari16' ],
+        cssMinify: 
+true
+      },
+      plugins: [
+        {
+          name: 
+'vite:optimized-deps',
+          
+applyToEnvironment: 
+[Function: 
+applyToEnvironment],
+          resolveId: 
+[Function: resolveId],
+          load: 
+[AsyncFunction: load]
+        },
+        {
+          name: 'vite:
+watch-package-data',
+          buildStart: 
+[Function: 
+buildStart],
+          buildEnd: 
+[Function: buildEnd],
+          
+watchChange: 
+[Function: 
+watchChange]
+        },
+        {
+          name: 
+'vite:pre-alias',
+          
+applyToEnvironment: 
+[Function: 
+applyToEnvironment],
+          resolveId: 
+[AsyncFunction: 
+resolveId]
+        },
+        {
+          name: 
+'alias',
+          buildStart: 
+[AsyncFunction: 
+buildStart],
+          resolveId: 
+[Function: resolveId]
+        },
+        {
+          name: '@tail
+windcss/vite:scan',
+          enforce: 
+'pre',
+          
+configureServer: 
+[Function: 
+configureServer],
+          
+configResolved: 
+[AsyncFunction: 
+configResolved]
+        },
+        {
+          name: '@tail
+windcss/vite:generate:
+serve',
+          apply: 
+'serve',
+          enforce: 
+'pre',
+          transform: {
+            filter: {
+              id: {
+                
+exclude: [
+                  
+/\/\.vite\//,
+                  /[?&
+](?:worker|sharedworke
+r|raw|url)\b/,
+                  
+/\?commonjs-proxy/
+                ],
+                
+include: [
+                  
+/\.css(?:\?.*)?$/,
+                  
+/&lang\.css/,
+                  
+/[?&]index\=\d+\.css$/
+                ]
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          hotUpdate: 
+[Function: hotUpdate]
+        },
+        {
+          name: 
+'vite-tsconfig-paths',
+          enforce: 
+'pre',
+          
+configResolved: 
+[Function: 
+configResolved],
+          
+configureServer: 
+[Function: 
+configureServer],
+          buildStart: 
+[Function: 
+buildStart],
+          resolveId: 
+[AsyncFunction: 
+resolveId]
+        },
+        {
+          name: 
+'vite:react-babel',
+          enforce: 
+'pre',
+          config: 
+[Function: config],
+          
+configResolved: 
+[Function: 
+configResolved],
+          options: 
+[Function: options],
+          transform: {
+            filter: {
+              id: {
+                
+include: 
+/\.[tj]sx?(?:\?.*)?$/,
+                
+exclude: 
+/\/node_modules\//
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:react-refresh',
+          enforce: 
+'pre',
+          config: 
+[Function: config],
+          resolveId: {
+            filter: { 
+id: 
+/^\/@react\-refresh$/ 
+},
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: 
+/^\/@react\-refresh$/ 
+},
+            handler: 
+[Function: handler]
+          },
+          
+transformIndexHtml: 
+[Function: 
+transformIndexHtml]
+        },
+        {
+          name: 'vite:
+modulepreload-polyfill
+',
+          resolveId: {
+            filter: { 
+id: /^vite\/moduleprel
+oad\-polyfill$/ },
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: /^ vite\/modulepre
+load\-polyfill\.js$/ 
+},
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 
+'vite:resolve',
+          resolveId: {
+            filter: { 
+id: { exclude: 
+/^(?:\0|\/?virtual:)/ 
+} },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          load: {
+            filter: {
+              id: [
+                /^__vi
+te\-browser\-external/
+,
+                /^__vi
+te\-optional\-peer\-de
+p/
+              ]
+            },
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 'vite:
+html-inline-proxy',
+          resolveId: {
+            filter: { 
+id: 
+/[?&]html-proxy\b/ },
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: 
+/[?&]html-proxy\b/ },
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 
+'vite:css',
+          buildStart: 
+[Function: 
+buildStart],
+          buildEnd: 
+[Function: buildEnd],
+          load: {
+            filter: {
+              id: /\.(
+css|less|sass|scss|sty
+l|stylus|pcss|postcss|
+sss)(?:$|\?)/
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                
+include: /\.(css|less|
+sass|scss|styl|stylus|
+pcss|postcss|sss)(?:$|
+\?)/,
+                
+exclude: [
+                  
+/[?&]commonjs-proxy/,
+                  /[?&
+](?:worker|sharedworke
+r|raw|url)\b/
+                ]
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:esbuild',
+          
+configureServer: 
+[Function: 
+configureServer],
+          transform: 
+[AsyncFunction: 
+transform]
+        },
+        {
+          name: 
+'vite:json',
+          transform: {
+            filter: {
+              id: {
+                
+include: /\.json(?:$|\
+?)(?!commonjs-(?:proxy
+|external))/,
+                
+exclude: /[?&](?:worke
+r|sharedworker|raw|url
+)\b/
+              }
+            },
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 
+'vite:wasm-helper',
+          resolveId: {
+            filter: { 
+id: /^ vite\/wasm\-hel
+per\.js$/ },
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: {
+              id: [
+                /^ vit
+e\/wasm\-helper\.js$/,
+                /(?<![
+?#].*)\.wasm\?init/
+              ]
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:worker',
+          buildStart: 
+[Function: 
+buildStart],
+          load: {
+            filter: { 
+id: /(?:\?|&)(worker|s
+haredworker)(?:&|$)/ 
+},
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          transform: {
+            filter: { 
+id: /(?:\?|&)worker_fi
+le&type=(\w+)(?:&|$)/ 
+},
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          
+renderChunk: 
+[Function: 
+renderChunk],
+          
+generateBundle: 
+[Function: 
+generateBundle],
+          
+watchChange: 
+[Function: 
+watchChange]
+        },
+        {
+          name: 
+'vite:asset',
+          perEnvironme
+ntStartEndDuringDev: 
+true,
+          buildStart: 
+[Function: 
+buildStart],
+          resolveId: 
+{ handler: [Function: 
+handler] },
+          load: {
+            filter: { 
+id: { exclude: /^\0/ 
+} },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          
+renderChunk: 
+[Function: 
+renderChunk],
+          
+generateBundle: 
+[Function: 
+generateBundle]
+        },
+        {
+          name: 'vite:
+react-virtual-preamble
+',
+          resolveId: {
+            order: 
+'pre',
+            filter: { 
+id: /^@vitejs\/plugin\
+-react\/preamble$/ },
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: /^ @vitejs\/plugin
+\-react\/preamble$/ },
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 
+'vite:wasm-fallback',
+          load: { 
+filter: { id: 
+/\.wasm$/ }, handler: 
+[Function: handler] }
+        },
+        {
+          name: 
+'vite:define',
+          transform: 
+{ handler: 
+[AsyncFunction: 
+handler] }
+        },
+        {
+          name: 
+'vite:css-post',
+          
+renderStart: 
+[Function: 
+renderStart],
+          transform: {
+            filter: {
+              id: {
+                
+include: /\.(css|less|
+sass|scss|styl|stylus|
+pcss|postcss|sss)(?:$|
+\?)/,
+                
+exclude: [
+                  
+/[?&]commonjs-proxy/,
+                  /[?&
+](?:worker|sharedworke
+r|raw|url)\b/
+                ]
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          
+renderChunk: 
+[AsyncFunction: 
+renderChunk],
+          
+augmentChunkHash: 
+[Function: 
+augmentChunkHash],
+          
+generateBundle: 
+[AsyncFunction: 
+generateBundle]
+        },
+        {
+          name: 'vite:
+worker-import-meta-url
+',
+          
+applyToEnvironment: 
+[Function: 
+applyToEnvironment],
+          transform: {
+            filter: {
+              code: /n
+ew\s+(?:Worker|SharedW
+orker)\s*\(\s*new\s+UR
+L.+?import\.meta\.url/
+s
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:
+asset-import-meta-url'
+,
+          
+applyToEnvironment: 
+[Function: 
+applyToEnvironment],
+          transform: {
+            filter: {
+              id: {
+                
+exclude: [
+                  /^ v
+ite\/preload\-helper\.
+js$/,
+                  /^C:
+\\Users\\hardi\\Downlo
+ads\\cargoclave \(11\)
+\\cargoclave\\node_mod
+ules\\vite\\dist\\clie
+nt\\client\.mjs$/
+                ]
+              },
+              code: /n
+ew\s+URL.+import\.meta
+\.url/s
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:
+dynamic-import-vars',
+          resolveId: {
+            filter: { 
+id: /^ vite\/dynamic\-
+import\-helper\.js$/ 
+},
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: /^ vite\/dynamic\-
+import\-helper\.js$/ 
+},
+            handler: 
+[Function: handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                
+exclude: /^C:\\Users\\
+hardi\\Downloads\\carg
+oclave \(11\)\\cargocl
+ave\\node_modules\\vit
+e\\dist\\client\\clien
+t\.mjs$/
+              },
+              code: 
+/\bimport\s*[(/]/
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:import-glob',
+          buildStart: 
+[Function: 
+buildStart],
+          transform: {
+            filter: { 
+code: 
+'import.meta.glob' },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          hotUpdate: 
+[Function: hotUpdate]
+        },
+        {
+          name: 
+'vite:client-inject',
+          buildStart: 
+[AsyncFunction: 
+buildStart],
+          transform: 
+[AsyncFunction: 
+transform]
+        },
+        {
+          name: 
+'vite:css-analysis',
+          transform: {
+            filter: {
+              id: {
+                
+include: /\.(css|less|
+sass|scss|styl|stylus|
+pcss|postcss|sss)(?:$|
+\?)/,
+                
+exclude: [
+                  
+/[?&]commonjs-proxy/,
+                  /[?&
+](?:worker|sharedworke
+r|raw|url)\b/
+                ]
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:
+import-analysis',
+          transform: 
+[AsyncFunction: 
+transform]
+        }
+      ]
+    },
+    ssr: {
+      define: 
+undefined,
+      resolve: {
+        
+externalConditions: [ 
+'node', 'module-sync' 
+],
+        extensions: [
+          '.mjs',  
+'.js',
+          '.mts',  
+'.ts',
+          '.jsx',  
+'.tsx',
+          '.json'
+        ],
+        dedupe: [],
+        noExternal: 
+[],
+        external: [],
+        
+preserveSymlinks: 
+false,
+        alias: [
+          {
+            find: 
+/^\/?@vite\/env/,
+            
+replacement: '/@fs/C:/
+Users/hardi/Downloads/
+cargoclave (11)/cargoc
+lave/node_modules/vite
+/dist/client/env.mjs'
+          },
+          {
+            find: 
+/^\/?@vite\/client/,
+            
+replacement: '/@fs/C:/
+Users/hardi/Downloads/
+cargoclave (11)/cargoc
+lave/node_modules/vite
+/dist/client/client.mj
+s'
+          }
+        ],
+        mainFields: [ 
+'module', 
+'jsnext:main', 
+'jsnext' ],
+        conditions: [ 
+'module', 'node', 'dev
+elopment|production' 
+],
+        builtins: [
+          
+'_http_agent',        
+ '_http_client',      
+  '_http_common',
+          
+'_http_incoming',     
+ '_http_outgoing',    
+  '_http_server',
+          
+'_stream_duplex',     
+ '_stream_passthrough'
+, '_stream_readable',
+          
+'_stream_transform',  
+ '_stream_wrap',      
+  '_stream_writable',
+          
+'_tls_common',        
+ '_tls_wrap',         
+  'assert',
+          
+'assert/strict',      
+ 'async_hooks',       
+  'buffer',
+          
+'child_process',      
+ 'cluster',           
+  'console',
+          
+'constants',          
+ 'crypto',            
+  'dgram',
+          'diagnostics
+_channel', 'dns',     
+            
+'dns/promises',
+          'domain',   
+           'events',  
+            'fs',
+          
+'fs/promises',        
+ 'http',              
+  'http2',
+          'https',    
+           
+'inspector',          
+ 'inspector/promises',
+          'module',   
+           'net',     
+            'os',
+          'path',     
+           
+'path/posix',         
+ 'path/win32',
+          
+'perf_hooks',         
+ 'process',           
+  'punycode',
+          
+'querystring',        
+ 'readline',          
+  'readline/promises',
+          'repl',     
+           'stream',  
+            
+'stream/consumers',
+          
+'stream/promises',    
+ 'stream/web',        
+  'string_decoder',
+          'sys',      
+           'timers',  
+            
+'timers/promises',
+          'tls',      
+           
+'trace_events',       
+ 'tty',
+          'url',      
+           'util',    
+            
+'util/types',
+          'v8',       
+           'vm',      
+            'wasi',
+          
+'worker_threads',     
+ 'zlib',              
+  /^node:/,
+          /^bun:/
+        ]
+      },
+      keepProcessEnv: 
+true,
+      consumer: 
+'server',
+      optimizeDeps: {
+        include: [],
+        exclude: [],
+        needsInterop: 
+[],
+        extensions: 
+[],
+        disabled: 
+undefined,
+        
+holdUntilCrawlEnd: 
+true,
+        force: false,
+        ignoreOutdated
+Requests: false,
+        noDiscovery: 
+true,
+        
+esbuildOptions: { 
+preserveSymlinks: 
+false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { 
+js: true },
+        
+sourcemapIgnoreList: 
+[Function: 
+isInNodeModules],
+        
+preTransformRequests: 
+false,
+        
+createEnvironment: 
+[Function: defaultCrea
+teDevEnvironment],
+        recoverable: 
+false,
+        moduleRunnerTr
+ansform: true
+      },
+      build: {
+        target: [ 
+'chrome107', 
+'edge107', 
+'firefox104', 
+'safari16' ],
+        polyfillModule
+Preload: true,
+        
+modulePreload: { 
+polyfill: true },
+        outDir: 
+'build',
+        assetsDir: 
+'assets',
+        
+assetsInlineLimit: 
+4096,
+        sourcemap: 
+false,
+        
+terserOptions: {},
+        
+rollupOptions: { 
+onwarn: [Function: 
+onwarn] },
+        
+commonjsOptions: { 
+include: [ 
+/node_modules/ ], 
+extensions: [ '.js', 
+'.cjs' ] },
+        dynamicImportV
+arsOptions: { 
+warnOnError: true, 
+exclude: [ 
+/node_modules/ ] },
+        write: true,
+        emptyOutDir: 
+null,
+        
+copyPublicDir: true,
+        license: 
+false,
+        manifest: 
+false,
+        lib: false,
+        ssrManifest: 
+false,
+        
+ssrEmitAssets: false,
+        
+reportCompressedSize: 
+true,
+        chunkSizeWarni
+ngLimit: 2000,
+        watch: null,
+        cssCodeSplit: 
+true,
+        minify: false,
+        ssr: true,
+        emitAssets: 
+false,
+        
+createEnvironment: 
+[Function: 
+createEnvironment],
+        cssTarget: [ 
+'chrome107', 
+'edge107', 
+'firefox104', 
+'safari16' ],
+        cssMinify: 
+'esbuild'
+      },
+      plugins: [
+        {
+          name: 'vite:
+watch-package-data',
+          buildStart: 
+[Function: 
+buildStart],
+          buildEnd: 
+[Function: buildEnd],
+          
+watchChange: 
+[Function: 
+watchChange]
+        },
+        {
+          name: 
+'alias',
+          buildStart: 
+[AsyncFunction: 
+buildStart],
+          resolveId: 
+[Function: resolveId]
+        },
+        {
+          name: '@tail
+windcss/vite:scan',
+          enforce: 
+'pre',
+          
+configureServer: 
+[Function: 
+configureServer],
+          
+configResolved: 
+[AsyncFunction: 
+configResolved]
+        },
+        {
+          name: '@tail
+windcss/vite:generate:
+serve',
+          apply: 
+'serve',
+          enforce: 
+'pre',
+          transform: {
+            filter: {
+              id: {
+                
+exclude: [
+                  
+/\/\.vite\//,
+                  /[?&
+](?:worker|sharedworke
+r|raw|url)\b/,
+                  
+/\?commonjs-proxy/
+                ],
+                
+include: [
+                  
+/\.css(?:\?.*)?$/,
+                  
+/&lang\.css/,
+                  
+/[?&]index\=\d+\.css$/
+                ]
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          hotUpdate: 
+[Function: hotUpdate]
+        },
+        {
+          name: 
+'vite-tsconfig-paths',
+          enforce: 
+'pre',
+          
+configResolved: 
+[Function: 
+configResolved],
+          
+configureServer: 
+[Function: 
+configureServer],
+          buildStart: 
+[Function: 
+buildStart],
+          resolveId: 
+[AsyncFunction: 
+resolveId]
+        },
+        {
+          name: 
+'vite:react-babel',
+          enforce: 
+'pre',
+          config: 
+[Function: config],
+          
+configResolved: 
+[Function: 
+configResolved],
+          options: 
+[Function: options],
+          transform: {
+            filter: {
+              id: {
+                
+include: 
+/\.[tj]sx?(?:\?.*)?$/,
+                
+exclude: 
+/\/node_modules\//
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:react-refresh',
+          enforce: 
+'pre',
+          config: 
+[Function: config],
+          resolveId: {
+            filter: { 
+id: 
+/^\/@react\-refresh$/ 
+},
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: 
+/^\/@react\-refresh$/ 
+},
+            handler: 
+[Function: handler]
+          },
+          
+transformIndexHtml: 
+[Function: 
+transformIndexHtml]
+        },
+        {
+          name: 'vite:
+modulepreload-polyfill
+',
+          resolveId: {
+            filter: { 
+id: /^vite\/moduleprel
+oad\-polyfill$/ },
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: /^ vite\/modulepre
+load\-polyfill\.js$/ 
+},
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 
+'vite:resolve',
+          resolveId: {
+            filter: { 
+id: { exclude: 
+/^(?:\0|\/?virtual:)/ 
+} },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          load: {
+            filter: {
+              id: [
+                /^__vi
+te\-browser\-external/
+,
+                /^__vi
+te\-optional\-peer\-de
+p/
+              ]
+            },
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 'vite:
+html-inline-proxy',
+          resolveId: {
+            filter: { 
+id: 
+/[?&]html-proxy\b/ },
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: 
+/[?&]html-proxy\b/ },
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 
+'vite:css',
+          buildStart: 
+[Function: 
+buildStart],
+          buildEnd: 
+[Function: buildEnd],
+          load: {
+            filter: {
+              id: /\.(
+css|less|sass|scss|sty
+l|stylus|pcss|postcss|
+sss)(?:$|\?)/
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                
+include: /\.(css|less|
+sass|scss|styl|stylus|
+pcss|postcss|sss)(?:$|
+\?)/,
+                
+exclude: [
+                  
+/[?&]commonjs-proxy/,
+                  /[?&
+](?:worker|sharedworke
+r|raw|url)\b/
+                ]
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:esbuild',
+          
+configureServer: 
+[Function: 
+configureServer],
+          transform: 
+[AsyncFunction: 
+transform]
+        },
+        {
+          name: 
+'vite:json',
+          transform: {
+            filter: {
+              id: {
+                
+include: /\.json(?:$|\
+?)(?!commonjs-(?:proxy
+|external))/,
+                
+exclude: /[?&](?:worke
+r|sharedworker|raw|url
+)\b/
+              }
+            },
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 
+'vite:wasm-helper',
+          resolveId: {
+            filter: { 
+id: /^ vite\/wasm\-hel
+per\.js$/ },
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: {
+              id: [
+                /^ vit
+e\/wasm\-helper\.js$/,
+                /(?<![
+?#].*)\.wasm\?init/
+              ]
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:worker',
+          buildStart: 
+[Function: 
+buildStart],
+          load: {
+            filter: { 
+id: /(?:\?|&)(worker|s
+haredworker)(?:&|$)/ 
+},
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          transform: {
+            filter: { 
+id: /(?:\?|&)worker_fi
+le&type=(\w+)(?:&|$)/ 
+},
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          
+renderChunk: 
+[Function: 
+renderChunk],
+          
+generateBundle: 
+[Function: 
+generateBundle],
+          
+watchChange: 
+[Function: 
+watchChange]
+        },
+        {
+          name: 
+'vite:asset',
+          perEnvironme
+ntStartEndDuringDev: 
+true,
+          buildStart: 
+[Function: 
+buildStart],
+          resolveId: 
+{ handler: [Function: 
+handler] },
+          load: {
+            filter: { 
+id: { exclude: /^\0/ 
+} },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          
+renderChunk: 
+[Function: 
+renderChunk],
+          
+generateBundle: 
+[Function: 
+generateBundle]
+        },
+        {
+          name: 'vite:
+react-virtual-preamble
+',
+          resolveId: {
+            order: 
+'pre',
+            filter: { 
+id: /^@vitejs\/plugin\
+-react\/preamble$/ },
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: /^ @vitejs\/plugin
+\-react\/preamble$/ },
+            handler: 
+[Function: handler]
+          }
+        },
+        {
+          name: 
+'vite:wasm-fallback',
+          load: { 
+filter: { id: 
+/\.wasm$/ }, handler: 
+[Function: handler] }
+        },
+        {
+          name: 
+'vite:define',
+          transform: 
+{ handler: 
+[AsyncFunction: 
+handler] }
+        },
+        {
+          name: 
+'vite:css-post',
+          
+renderStart: 
+[Function: 
+renderStart],
+          transform: {
+            filter: {
+              id: {
+                
+include: /\.(css|less|
+sass|scss|styl|stylus|
+pcss|postcss|sss)(?:$|
+\?)/,
+                
+exclude: [
+                  
+/[?&]commonjs-proxy/,
+                  /[?&
+](?:worker|sharedworke
+r|raw|url)\b/
+                ]
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          
+renderChunk: 
+[AsyncFunction: 
+renderChunk],
+          
+augmentChunkHash: 
+[Function: 
+augmentChunkHash],
+          
+generateBundle: 
+[AsyncFunction: 
+generateBundle]
+        },
+        {
+          name: 'vite:
+dynamic-import-vars',
+          resolveId: {
+            filter: { 
+id: /^ vite\/dynamic\-
+import\-helper\.js$/ 
+},
+            handler: 
+[Function: handler]
+          },
+          load: {
+            filter: { 
+id: /^ vite\/dynamic\-
+import\-helper\.js$/ 
+},
+            handler: 
+[Function: handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                
+exclude: /^C:\\Users\\
+hardi\\Downloads\\carg
+oclave \(11\)\\cargocl
+ave\\node_modules\\vit
+e\\dist\\client\\clien
+t\.mjs$/
+              },
+              code: 
+/\bimport\s*[(/]/
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 
+'vite:import-glob',
+          buildStart: 
+[Function: 
+buildStart],
+          transform: {
+            filter: { 
+code: 
+'import.meta.glob' },
+            handler: 
+[AsyncFunction: 
+handler]
+          },
+          hotUpdate: 
+[Function: hotUpdate]
+        },
+        {
+          name: 
+'vite:client-inject',
+          buildStart: 
+[AsyncFunction: 
+buildStart],
+          transform: 
+[AsyncFunction: 
+transform]
+        },
+        {
+          name: 
+'vite:css-analysis',
+          transform: {
+            filter: {
+              id: {
+                
+include: /\.(css|less|
+sass|scss|styl|stylus|
+pcss|postcss|sss)(?:$|
+\?)/,
+                
+exclude: [
+                  
+/[?&]commonjs-proxy/,
+                  /[?&
+](?:worker|sharedworke
+r|raw|url)\b/
+                ]
+              }
+            },
+            handler: 
+[AsyncFunction: 
+handler]
+          }
+        },
+        {
+          name: 'vite:
+import-analysis',
+          transform: 
+[AsyncFunction: 
+transform]
+        }
+      ]
+    }
+  },
+  resolve: {
+    
+externalConditions: [ 
+'node', 'module-sync' 
+],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: 
+false,
+    alias: [
+      {
+        find: 
+/^\/?@vite\/env/,
+        replacement: '
+/@fs/C:/Users/hardi/Do
+wnloads/cargoclave (11
+)/cargoclave/node_modu
+les/vite/dist/client/e
+nv.mjs'
+      },
+      {
+        find: 
+/^\/?@vite\/client/,
+        replacement: '
+/@fs/C:/Users/hardi/Do
+wnloads/cargoclave (11
+)/cargoclave/node_modu
+les/vite/dist/client/c
+lient.mjs'
+      }
+    ],
+    mainFields: [ 
+'browser', 'module', 
+'jsnext:main', 
+'jsnext' ],
+    conditions: [ 
+'module', 'browser', '
+development|production
+' ],
+    builtins: []
+  },
+  configFile: 'C:/User
+s/hardi/Downloads/carg
+oclave (11)/cargoclave
+/vite.config.mjs',
+  configFileDependenci
+es: [
+    'C:/Users/hardi/Do
+wnloads/cargoclave (11
+)/cargoclave/vite.conf
+ig.mjs'
+  ],
+  inlineConfig: {
+    root: undefined,
+    base: undefined,
+    mode: undefined,
+    configFile: 
+undefined,
+    configLoader: 
+undefined,
+    logLevel: 
+undefined,
+    clearScreen: 
+undefined,
+    server: { host: 
+undefined },
+    
+forceOptimizeDeps: 
+undefined
+  },
+  root: 'C:/Users/hard
+i/Downloads/cargoclave
+ (11)/cargoclave',
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  publicDir: 'C:/Users
+/hardi/Downloads/cargo
+clave (11)/cargoclave/
+public',
+  cacheDir: 'C:/Users/
+hardi/Downloads/cargoc
+lave (11)/cargoclave/n
+ode_modules/.vite',
+  command: 'serve',
+  mode: 'development',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: false,
+  css: {
+    transformer: 
+'postcss',
+    preprocessorMaxWor
+kers: true,
+    devSourcemap: 
+false
+  },
+  json: { 
+namedExports: true, 
+stringify: 'auto' },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: true,
+    host: '0.0.0.0',
+    allowedHosts: [
+      
+'.amazonaws.com',
+      '.builtwithrocke
+t.new',
+      '0.0.0.0',
+      '0.0.0.0',
+      '0.0.0.0',
+      '0.0.0.0'
+    ],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?
+:\/\/(?:(?:[^:]+\.)?lo
+calhost|127\.0\.0\.1|\
+[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'C:/Users/ha
+rdi/Downloads/cargocla
+ve (11)/cargoclave',
+  env: {
+    
+VITE_SUPABASE_URL: 'ht
+tps://dummy.supabase.c
+o',
+    VITE_SUPABASE_ANON
+_KEY: 'dummykey.update
+yourkkey.here',
+    
+VITE_OPENAI_API_KEY: '
+your-openai-api-key-he
+re',
+    
+VITE_GEMINI_API_KEY: '
+your-gemini-api-key-he
+re',
+    VITE_ANTHROPIC_API
+_KEY: 'your-anthropic-
+api-key-here',
+    VITE_GOOGLE_ANALYT
+ICS_ID: 'your-google-a
+nalytics-id-here',
+    VITE_ADSENSE_ID: '
+your-adsense-id-here',
+    VITE_PERPLEXITY_AP
+I_KEY: 'your-perplexit
+y-api-key-here',
+    VITE_STRIPE_PUBLIS
+HABLE_KEY: 'your-strip
+e-publishable-key-here
+',
+    BASE_URL: '/',
+    MODE: 
+'development',
+    DEV: true,
+    PROD: false
+  },
+  assetsInclude: 
+[Function: 
+assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: 
+info],
+    warn: [Function: 
+warn],
+    warnOnce: 
+[Function: warnOnce],
+    error: [Function: 
+error],
+    clearScreen: 
+[Function: 
+clearScreen],
+    hasErrorLogged: 
+[Function: 
+hasErrorLogged]
+  },
+  packageCache: 
+Map(1) {
+    'fnpd_C:/Users/har
+di/Downloads/cargoclav
+e (11)/cargoclave' => 
+{
+      dir: 'C:/Users/h
+ardi/Downloads/cargocl
+ave (11)/cargoclave',
+      data: {
+        name: 
+'cargoclave',
+        version: 
+'0.1.0',
+        private: true,
+        
+rocketCritical: {
+          
+dependencies: [
+            '@dhiwise/
+component-tagger',
+            'react',
+            
+'react-dom',
+            
+'@reduxjs/toolkit',
+            'redux',
+            
+'react-router-dom'
+          ],
+          
+devDependencies: [
+            '@vitejs/p
+lugin-react',
+            'vite',
+            
+'vite-tsconfig-paths',
+            
+'tailwindcss',
+            
+'autoprefixer',
+            'postcss'
+          ],
+          scripts: [ 
+'start', 'build', 
+'serve' ],
+          warning: 
+'≡ƒÜ¿ CRITICAL: DO 
+NOT REMOVE OR MODIFY 
+ABOVE DEPENDENCIES - 
+Required for app 
+functionality'
+        },
+        dependencies: 
+{
+          '@dhiwise/co
+mponent-tagger': 
+'^1.0.10',
+          '@radix-ui/r
+eact-slot': '^1.2.3',
+          
+'@reduxjs/toolkit': 
+'^2.11.2',
+          
+'@tailwindcss/forms': 
+'^0.5.7',
+          
+'@tailwindcss/vite': 
+'^4.2.1',
+          '@testing-li
+brary/jest-dom': 
+'^6.9.1',
+          '@testing-li
+brary/react': 
+'^16.3.2',
+          '@testing-li
+brary/user-event': 
+'^14.6.1',
+          axios: 
+'^1.13.5',
+          'class-varia
+nce-authority': 
+'^0.7.1',
+          clsx: 
+'^2.1.1',
+          d3: 
+'^7.9.0',
+          'date-fns': 
+'^4.1.0',
+          dotenv: 
+'^17.3.1',
+          
+'framer-motion': 
+'^10.16.4',
+          
+'lucide-react': 
+'^0.484.0',
+          react: 
+'^19.2.4',
+          
+'react-dom': 
+'^19.2.4',
+          
+'react-helmet': 
+'^6.1.0',
+          
+'react-hook-form': 
+'^7.71.2',
+          
+'react-router-dom': 
+'6.0.2',
+          'react-route
+r-hash-link': 
+'^2.4.3',
+          recharts: 
+'^3.7.0',
+          redux: 
+'^5.0.1',
+          
+'tailwind-merge': 
+'^3.3.1',
+          'tailwindcss
+-animate': '^1.0.7',
+          'tailwindcss
+-elevation': '^2.0.0',
+          'tailwindcss
+-fluid-type': '^2.0.7'
+        },
+        scripts: {
+          start: 
+'vite',
+          build: 
+'vite build 
+--sourcemap',
+          serve: 
+'vite preview'
+        },
+        eslintConfig: 
+{ extends: [ 
+'react-app', 
+'react-app/jest' ] },
+        browserslist: 
+{
+          production: 
+[ '>0.2%', 'not 
+dead', 'not op_mini 
+all' ],
+          
+development: [
+            'last 1 
+chrome version',
+            'last 1 
+firefox version',
+            'last 1 
+safari version'
+          ]
+        },
+        
+devDependencies: {
+          '@tailwindcs
+s/aspect-ratio': 
+'^0.4.2',
+          '@tailwindcs
+s/container-queries': 
+'^0.1.1',
+          '@tailwindcs
+s/line-clamp': 
+'^0.1.0',
+          '@tailwindcs
+s/typography': 
+'^0.5.16',
+          '@vitejs/plu
+gin-react': '^5.1.4',
+          
+autoprefixer: 
+'^10.4.24',
+          postcss: 
+'^8.5.6',
+          
+tailwindcss: '^4.2.1',
+          vite: 
+'^7.3.1',
+          'vite-tsconf
+ig-paths': '^6.1.1'
+        }
+      },
+      hasSideEffects: 
+[Function: 
+hasSideEffects],
+      
+setResolvedCache: 
+[Function: 
+setResolvedCache],
+      
+getResolvedCache: 
+[Function: 
+getResolvedCache]
+    },
+    set: [Function 
+(anonymous)]
+  },
+  worker: { format: 
+'iife', plugins: '() 
+=> plugins', 
+rollupOptions: {} },
+  appType: 'spa',
+  experimental: {
+    importGlobRestoreE
+xtension: false,
+    renderBuiltUrl: 
+undefined,
+    hmrPartialAccept: 
+false
+  },
+  future: undefined,
+  ssr: {
+    target: 'node',
+    optimizeDeps: {
+      esbuildOptions: 
+{ preserveSymlinks: 
+false },
+      include: [],
+      exclude: [],
+      needsInterop: 
+[],
+      extensions: [],
+      
+holdUntilCrawlEnd: 
+true,
+      force: false,
+      ignoreOutdatedRe
+quests: false,
+      noDiscovery: 
+true
+    },
+    external: [],
+    noExternal: [],
+    resolve: {
+      conditions: [ 
+'module', 'node', 'dev
+elopment|production' 
+],
+      
+externalConditions: [ 
+'node', 'module-sync' 
+]
+    }
+  },
+  dev: {
+    warmup: [],
+    sourcemap: { js: 
+true },
+    
+sourcemapIgnoreList: 
+[Function: 
+isInNodeModules],
+    
+preTransformRequests: 
+false,
+    
+createEnvironment: 
+[Function: defaultCrea
+teDevEnvironment],
+    recoverable: 
+false,
+    moduleRunnerTransf
+orm: false
+  },
+  webSocketToken: 
+'o6qfj067cnZH',
+  getSortedPlugins: 
+[Function: 
+getSortedPlugins],
+  
+getSortedPluginHooks: 
+[Function: 
+getSortedPluginHooks],
+  createResolver: 
+[Function: 
+createResolver],
+  fsDenyGlob: 
+[Function: 
+arrayMatcher],
+  safeModulePaths: 
+Set(0) {},
+  Symbol(vite:resolved
+-config): true
+}
+2026-02-23T15:04:11.49
+3Z vite:deps (client) 
+[32mremoving old 
+cache dir C:/Users/har
+di/Downloads/cargoclav
+e (11)/cargoclave/node
+_modules/.vite/deps[3
+9m
+2026-02-23T15:04:11.51
+2Z vite:resolve 
+[33m10.88ms[39m 
+[36mreact[39m -> [2
+mC:/Users/hardi/Downlo
+ads/cargoclave (11)/ca
+rgoclave/node_modules/
+react/index.js[22m
+2026-02-23T15:04:11.51
+9Z vite:resolve 
+[32m6.31ms[39m 
+[36mreact-dom[39m 
+-> [2mC:/Users/hardi/
+Downloads/cargoclave (
+11)/cargoclave/node_mo
+dules/react-dom/index.
+js[22m
+2026-02-23T15:04:11.52
+1Z vite:resolve 
+[32m1.84ms[39m [36m
+react/jsx-dev-runtime
+[39m -> [2mC:/Users/h
+ardi/Downloads/cargocl
+ave (11)/cargoclave/no
+de_modules/react/jsx-d
+ev-runtime.js[22m
+2026-02-23T15:04:11.52
+3Z vite:resolve 
+[32m1.64ms[39m [36m
+react/jsx-runtime[39m
+ -> [2mC:/Users/hardi
+/Downloads/cargoclave 
+(11)/cargoclave/node_m
+odules/react/jsx-runti
+me.js[22m
+2026-02-23T15:04:11.52
+6Z vite:deps 
+[32mscanning for 
+dependencies...[39m
+[31merror when 
+starting dev server:
+Error: Port 4028 is 
+already in use
+    at 
+Server.onError$1 (file
+:///C:/Users/hardi/Dow
+nloads/cargoclave%20(1
+1)/cargoclave/node_mod
+ules/vite/dist/node/ch
+unks/config.js:14933:2
+8)
+    at Server.emit 
+(node:events:508:28)
+    at emitErrorNT 
+(node:net:1976:8)
+    at process.process
+TicksAndRejections (no
+de:internal/process/ta
+sk_queues:89:21)[39m

@@ -1,0 +1,122 @@
+﻿
+> cargoclave@0.1.0 start
+> vite
+
+
+  [32m[1mVITE[22m v7.3.1[39m  [2mready in [0m[1m1130[22m[2m[0m ms[22m
+
+  [32mΓ₧£[39m  [1mLocal[22m:   [36mhttp://localhost:[1m4029[22m/[39m
+  [32mΓ₧£[39m  [1mNetwork[22m: [36mhttp://10.5.0.2:[1m4029[22m/[39m
+  [32mΓ₧£[39m  [1mNetwork[22m: [36mhttp://192.168.1.99:[1m4029[22m/[39m
+[2m[32m  Γ₧£[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+node.exe : X [ERROR] 
+Could not resolve 
+"react-is"
+At line:1 char:1
++ & "C:\Program Files\
+nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (X [ERROR]    
+ Could not resolve    
+ "react-is":Strin    
+g) [], RemoteExce    
+ption
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+
+    node_modules/recha
+rts/es6/util/ReactUtil
+s.js:3:27:
+      3 Γöé import { 
+isFragment } from 
+'react-is';
+        Γò╡           
+                 
+~~~~~~~~~~
+
+  You can mark the 
+path "react-is" as 
+external to exclude 
+it from the bundle, 
+which will remove 
+this error and leave 
+the unresolved path 
+in the bundle.
+
+C:\Users\hardi\Downloa
+ds\cargoclave (11)\car
+goclave\node_modules\e
+sbuild\lib\main.js:146
+7
+  let error = new 
+Error(text);
+              ^
+
+Error: [31mError 
+during dependency 
+optimization:
+
+[39m[31mX [41;31m[
+[41;97mERROR[41;31m]
+[0m [1mCould not 
+resolve "react-is"[0m
+
+    node_modules/recha
+rts/es6/util/ReactUtil
+s.js:3:27:
+[37m      3 Γöé 
+import { isFragment } 
+from 
+[32m'react-is'[37m;
+        Γò╡           
+                 
+[32m~~~~~~~~~~[0m
+
+  You can mark the 
+path "react-is" as 
+external to exclude 
+it from the bundle, 
+which will remove 
+this error and leave 
+the unresolved path 
+in the bundle.
+
+
+    at 
+failureErrorWithLog (C
+:\Users\hardi\Download
+s\cargoclave (11)\carg
+oclave\node_modules\es
+build\lib\main.js:1467
+:15)
+    at C:\Users\hardi\
+Downloads\cargoclave (
+11)\cargoclave\node_mo
+dules\esbuild\lib\main
+.js:926:25
+    at C:\Users\hardi\
+Downloads\cargoclave (
+11)\cargoclave\node_mo
+dules\esbuild\lib\main
+.js:1345:9
+    at process.process
+TicksAndRejections (no
+de:internal/process/ta
+sk_queues:103:5) {
+  errors: 
+[Getter/Setter],
+  warnings: 
+[Getter/Setter]
+}
+
+Node.js v24.11.1
