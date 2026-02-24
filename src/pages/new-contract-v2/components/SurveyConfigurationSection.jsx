@@ -208,21 +208,42 @@ const SurveyConfigurationSection = ({ isExpanded, onToggle, formData, setFormDat
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            <Input
-                                                                label="Survey Location (Google Search)"
-                                                                iconName="Search"
-                                                                placeholder="Auto-suggest facility..."
-                                                                className="h-9 text-xs"
-                                                                value={survey.location}
-                                                                onChange={(e) => updateSurvey(container.id, survey.id, 'location', e.target.value)}
-                                                            />
+                                                            <div className="relative group/search">
+                                                                <Input
+                                                                    label="Survey Location (Google Search)"
+                                                                    iconName="Search"
+                                                                    placeholder="Auto-suggest facility..."
+                                                                    className="h-9 text-xs"
+                                                                    value={survey.location}
+                                                                    onChange={(e) => updateSurvey(container.id, survey.id, 'location', e.target.value)}
+                                                                />
+                                                                {survey.location.length >= 2 && (
+                                                                    <div className="absolute z-10 w-full bg-white border border-slate-200 rounded-lg shadow-xl mt-1 py-1 animate-in fade-in slide-in-from-top-2">
+                                                                        {[
+                                                                            'TechHub Customs Warehouse, BLR',
+                                                                            'Gateway Port CFS Terminal, MH',
+                                                                            'Mundra Port Yard 7, GJ',
+                                                                            'JNPT Central Survey Station, MH'
+                                                                        ].filter(item => item.toLowerCase().includes(survey.location.toLowerCase())).map(item => (
+                                                                            <button
+                                                                                key={item}
+                                                                                onClick={() => updateSurvey(container.id, survey.id, 'location', item)}
+                                                                                className="w-full text-left px-3 py-2 text-xs hover:bg-slate-50 text-slate-700"
+                                                                            >
+                                                                                {item}
+                                                                            </button>
+                                                                        ))}
+                                                                    </div>
+                                                                )}
+                                                            </div>
                                                             <Input
                                                                 label="Survey Date"
                                                                 type="date"
                                                                 className="h-9 text-xs"
                                                                 value={survey.date}
                                                                 onChange={(e) => updateSurvey(container.id, survey.id, 'date', e.target.value)}
-                                                                description={`Must be before ${formData.contractInfo.endDate || 'End Date'}`}
+                                                                error={survey.date && formData.contractInfo.endDate && survey.date > formData.contractInfo.endDate ? 'Date cannot exceed contract end date' : null}
+                                                                description={`Contract ends on: ${formData.contractInfo.endDate || 'Not set'}`}
                                                             />
                                                         </div>
 
