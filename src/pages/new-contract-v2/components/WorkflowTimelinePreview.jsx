@@ -91,7 +91,7 @@ const WorkflowTimelinePreview = ({ isExpanded, onToggle, formData }) => {
                 </div>
                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-100">
                     <span className="block text-[0.625rem] text-slate-400 font-bold uppercase mb-1">Mandatory Proofs</span>
-                    <span className="text-xl font-bold text-slate-900">{formData.survey.photoMandatory ? 'Required' : 'Optional'}</span>
+                    <span className="text-xl font-bold text-slate-900">{formData.surveyInfo?.photoMandatory ? 'Required' : 'Optional'}</span>
                 </div>
                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-100">
                     <span className="block text-[0.625rem] text-slate-400 font-bold uppercase mb-1">Blocking Stages</span>
