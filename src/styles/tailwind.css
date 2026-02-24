@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --app-scale: 1;
+  --app-scale: 0.75;
   /* Unitless multiplier, e.g., 0.8 for 80% */
 }
 
